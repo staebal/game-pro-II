@@ -1,13 +1,13 @@
 Need to Code:
 
 Weapon Code				(PRIORITY)
-	Sword		- Robbie
-	Fire Rod	-
-	Whip		-
+	Sword
+	Fire Rod
+	Whip
 
 Player Code				(PRIORITY)
-	Move		- Alex 
-	Use Weapon	-
+	Move
+	Use Weapon
 
 Circus Map			
 	Big Top Arena			(PRIORITY)
@@ -72,8 +72,8 @@ projectile art
 	basic attack	
 
 menus 
-	start menu		-SETH B.
+	start menu
 	weapon selection
 	game over
 
-project management		-Alex	(PRIORITY)
+project management		
