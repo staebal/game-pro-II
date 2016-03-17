@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Mover : MonoBehaviour {
 
-	//public float speed;
+	public float speed;
 	Rigidbody2D rBody;
 	Animator animator;
 
@@ -18,16 +18,16 @@ public class Mover : MonoBehaviour {
 		// Prehaps upgrade to utilize .GetAxis()???
 		Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 		if(movementVector != Vector2.zero) {		// if moving
-			animator.SetBool("IsWalking", true);
+			animator.SetBool("IsMoving", true);
 			animator.SetFloat("InputX", movementVector.x);
 			animator.SetFloat("InputY", movementVector.y);
 		}
 		else {										// if not moving
-			animator.SetBool("IsWalking", false);
+			animator.SetBool("IsMoving", false);
 		}
 		
 		// Prehaps ugrade to utilize FixedUpdate()?
-		rBody.MovePosition(rBody.position + movementVector * Time.deltaTime);
+		rBody.MovePosition(rBody.position + movementVector * speed * Time.deltaTime);
 		
 	}
 	
