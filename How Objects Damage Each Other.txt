@@ -1,0 +1,40 @@
+
+//Here is how the sword swallower damages Wallow
+
+//In boss code:
+void OnCollisionEnter2D(Collision2D other){
+	if (other.gameObject.tag == "Player" && caninjure) {
+		other.gameObject.SendMessage("ApplyDamage", 1);
+	}
+}
+
+
+
+//In Wallow's code:
+void ApplyDamage(int damageamount) {
+	health -= damageamount;
+}
+
+
+
+
+
+//Here is an example on how a fireball would damage a boss
+
+
+//In fireball code:
+void OnCollisionEnter2D(Collision2D other){
+	//Damage object if enemy
+	if (other.gameObject.tag == "Enemy") {
+		other.gameObject.SendMessage("ApplyDamage", 1);
+	}
+	//The fireball will die since it collided with something
+	Destroy (gameObject);
+}
+
+//In the boss code:
+void ApplyDamage(int damageamount) {
+	if(canbehurt){
+		health -= damageamount;
+	}
+}

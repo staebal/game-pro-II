@@ -1,0 +1,81 @@
+
+
+List of Animation States:
+
+Idle, Block, ThrowAttack, Spin, Prep, Charge, Stun, Die
+
+List of Animation Parameters:
+
+State_Flag	Integer	//Controls the current state
+Switch_Flag	Bool	//Signals that it is time to change state
+Under_Half	Bool	//Determines if boss is in second stage
+
+
+
+Transitions:
+
+Idle-> Block
+	Under_Half == true
+Idle-> ThrowAttack
+	State_Flag == 1
+	Switch_Flag == true
+Idle-> Spin
+	State_Flag == 2
+	Switch_Flag == true
+Idle-> Prep
+	State_Flag == 3
+	Switch_Flag == true
+Idle-> Die
+	State_Flag == 6
+	Switch_Flag == true
+
+
+Block-> ThrowAttack
+	State_Flag == 1
+	Switch_Flag == true
+Block-> Spin
+	State_Flag == 2
+	Switch_Flag == true
+Block-> Prep
+	State_Flag == 3
+	Switch_Flag == true
+Block-> Die
+	State_Flag == 6
+	Switch_Flag == true
+
+
+ThrowAttack-> Idle
+	State_Flag == 0
+	Switch_Flag == true
+	Under_Half == false
+ThrowAttack-> Block
+	State_Flag == 0
+	Switch_Flag == true
+	Under_Half == true
+
+Spin->Stun
+	State_Flag == 5
+	Switch_Flag == true
+
+
+Stun-> Idle
+	State_Flag == 0
+	Switch_Flag == true
+	Under_Half == false
+Stun-> Block
+	State_Flag == 0
+	Switch_Flag == true
+	Under_Half == true
+Stun-> Die
+	State_Flag == 6
+	Switch_Flag == true
+
+
+Prep->Charge
+	State_Flag == 4
+	Switch_Flag == true
+
+
+Charge->Stun
+	State_Flag == 5
+	Switch_Flag == true
