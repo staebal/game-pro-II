@@ -1,9 +1,0 @@
-1280x720 screen
-
-1216x656 workable arena field (64 px from the screen border on each side)
-
-reserve 1280x64 on top of screen for HUD space
-
-scale wallow's dimmensions to 64x64
-
-scale lions' dimmensions to 64x64
