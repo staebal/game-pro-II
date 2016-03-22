@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player_Movement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ThrowSword_Move.cs">
     <Files>
-      <File FileName="Assets\BossThree_Movement.cs" Line="112" Column="44" />
-      <File FileName="Assets\Player_Movement.cs" Line="26" Column="60" />
+      <File FileName="Assets\BossThree_Movement.cs" Line="61" Column="10" />
+      <File FileName="Assets\ThrowSword_Move.cs" Line="13" Column="58" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

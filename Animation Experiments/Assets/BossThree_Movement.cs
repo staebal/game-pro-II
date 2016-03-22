@@ -5,7 +5,7 @@ public class BossThree_Movement : MonoBehaviour {
 
 	enum B3State { Idle, ThrowAttack, Spin, Prep, Charge, Stun, Die };
 
-	//public GameObject knifePreFab;
+	public GameObject knifePreFab;
 	float startx;
 	float starty;
 
@@ -45,8 +45,7 @@ public class BossThree_Movement : MonoBehaviour {
 		{
 		//Idle
 		case B3State.Idle:
-			if (timer <= 0)
-			{
+			if (timer <= 0) {
 				attackno++;
 				if ((attackno % 3) == 0) {
 					timer = 60;
@@ -66,9 +65,14 @@ public class BossThree_Movement : MonoBehaviour {
 				timer = 120;
 				currstate = B3State.Idle;
 			} else if ((timer % 15) == 3) {
-				//GameObject Clone;
-				//Clone = (Instantiate (knifePreFab, transform.position,
-				//transform.rotation)) as GameObject;
+				GameObject Clone;
+				if (target.transform.position.x < transform.position.x) {
+					Clone = (Instantiate (knifePreFab, (transform.position - transform.up
+					- transform.right), transform.rotation)) as GameObject;
+				} else {
+					Clone = (Instantiate (knifePreFab, (transform.position - transform.up
+						+ transform.right), transform.rotation)) as GameObject;
+				}
 			}
 			break;
 			//Spin
@@ -93,7 +97,7 @@ public class BossThree_Movement : MonoBehaviour {
 			//Prep
 		case B3State.Prep:
 			if (timer <= 0) {
-				timer = 120;
+				timer = 240;
 				currstate = B3State.Charge;
 			} else {
 				if (target.transform.position.x < transform.position.x) {
@@ -124,7 +128,7 @@ public class BossThree_Movement : MonoBehaviour {
 			//Death
 		case B3State.Die:
 			if (timer <= 0){
-				Destroy (this);
+				Destroy (this.gameObject);
 			}
 			break;
 		}
@@ -148,7 +152,13 @@ public class BossThree_Movement : MonoBehaviour {
 				|| currstate == B3State.Charge)
 			{
 				//other.gameObject.SendMessage("ApplyDamage", 1);
+			}else if (currstate == B3State.Stun){
+				ApplyDamage (10);
 			}
+		}
+		if (other.gameObject.tag == "Arena" && (currstate == B3State.Charge)) {
+			timer = 120;
+			currstate = B3State.Stun;
 		}
 	}
 
