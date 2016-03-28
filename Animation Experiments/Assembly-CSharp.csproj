@@ -45,7 +45,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BossOne_Movement.cs" />
      <Compile Include="Assets\BossThree_Movement.cs" />
+     <Compile Include="Assets\Boss_One_Movement.cs" />
+     <Compile Include="Assets\DownFire_Movement.cs" />
+     <Compile Include="Assets\FlashFire_Movement.cs" />
      <Compile Include="Assets\Player_Movement.cs" />
      <Compile Include="Assets\ThrowSword_Move.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs" />

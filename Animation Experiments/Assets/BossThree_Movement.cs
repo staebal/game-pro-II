@@ -131,7 +131,7 @@ public class BossThree_Movement : MonoBehaviour {
 				Destroy (this.gameObject);
 			}
 			break;
-		}
+		}//End State Update
 		//Update Animator States
 		if (hitblink > 0){
 			anim.SetBool("Hit_Blink", true);
