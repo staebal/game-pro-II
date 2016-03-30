@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\BossOne_Movement.cs" />
      <Compile Include="Assets\BossThree_Movement.cs" />
+     <Compile Include="Assets\BossTwo_Movement.cs" />
      <Compile Include="Assets\Boss_One_Movement.cs" />
      <Compile Include="Assets\DownFire_Movement.cs" />
      <Compile Include="Assets\FlashFire_Movement.cs" />
