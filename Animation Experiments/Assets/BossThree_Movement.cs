@@ -29,9 +29,8 @@ public class BossThree_Movement : MonoBehaviour {
 		startx = transform.position.x;
 		starty = transform.position.y;
 
-		currstate = B3State.Idle;
-		timer = 120;
-		attackno = 0;
+		SetIdle ();
+		attackno = 3;
 		health = 100;
 		hitblink = 0;
 	}
@@ -48,23 +47,19 @@ public class BossThree_Movement : MonoBehaviour {
 			if (timer <= 0) {
 				attackno++;
 				if ((attackno % 3) == 0) {
-					timer = 60;
-					currstate = B3State.ThrowAttack;
+					SetThrowAttack ();
 				} else if ((attackno % 3) == 1) {
-					timer = 180;
-					currstate = B3State.Spin;
+					SetSpin ();
 				} else {
-					timer = 120;
-					currstate = B3State.Prep;
+					SetPrep ();
 				}
 			}
 			break;
 			//ThrowAttack
 		case B3State.ThrowAttack:
 			if (timer <= 0) {
-				timer = 120;
-				currstate = B3State.Idle;
-			} else if ((timer % 15) == 3) {
+				SetIdle ();
+			} else if ((timer % 30) == 3) {
 				GameObject Clone;
 				if (target.transform.position.x < transform.position.x) {
 					Clone = (Instantiate (knifePreFab, (transform.position - transform.up
@@ -78,9 +73,8 @@ public class BossThree_Movement : MonoBehaviour {
 			//Spin
 		case B3State.Spin:
 			if (timer <= 0) {
-				timer = 120;
-				currstate = B3State.Stun;
-			} else {
+				SetStun ();
+			} else if (timer % 3 == 0) {
 				//Chase Wallow
 				if (target.transform.position.x < transform.position.x) {
 					transform.position -= transform.right * 4 * Time.deltaTime; 
@@ -97,8 +91,7 @@ public class BossThree_Movement : MonoBehaviour {
 			//Prep
 		case B3State.Prep:
 			if (timer <= 0) {
-				timer = 240;
-				currstate = B3State.Charge;
+				SetCharge ();
 			} else {
 				if (target.transform.position.x < transform.position.x) {
 					transform.position -= transform.right * 4 * Time.deltaTime; 
@@ -110,8 +103,7 @@ public class BossThree_Movement : MonoBehaviour {
 			//Charge
 		case B3State.Charge:
 			if (timer <= 0) {
-				timer = 120;
-				currstate = B3State.Stun;
+				SetStun ();
 			} else {
 				transform.position -= transform.up * 12 * Time.deltaTime;
 			}
@@ -119,8 +111,7 @@ public class BossThree_Movement : MonoBehaviour {
 			//Stun
 		case B3State.Stun:
 			if (timer <= 0) {
-				timer = 120;
-				currstate = B3State.Idle;
+				SetIdle ();
 				//Teleport back to spawn
 				transform.position = new Vector2(startx, starty);
 			}
@@ -151,14 +142,11 @@ public class BossThree_Movement : MonoBehaviour {
 			if(currstate == B3State.Spin || currstate == B3State.ThrowAttack
 				|| currstate == B3State.Charge)
 			{
-				//other.gameObject.SendMessage("ApplyDamage", 1);
-			}else if (currstate == B3State.Stun){
-				ApplyDamage (10);
+				other.gameObject.SendMessage("ApplyDamage", 1);
 			}
 		}
 		if (other.gameObject.tag == "Arena" && (currstate == B3State.Charge)) {
-			timer = 120;
-			currstate = B3State.Stun;
+			SetStun ();
 		}
 	}
 
@@ -171,13 +159,41 @@ public class BossThree_Movement : MonoBehaviour {
 			anim.SetBool("Hit_Blink", true);
 			health -= damageamount;
 			if (health <= 0){
-				timer = 30;
 				hitblink = 0;
 				anim.SetBool("Hit_Blink", false);
-				currstate = B3State.Die;
+				SetDie ();
 			}else if (health <= 50){
 				anim.SetBool("Under_Half", true);
 			}
 		}
+	}
+
+	void SetIdle(){
+		timer = 100;
+		currstate = B3State.Idle;
+	}
+	void SetThrowAttack(){
+		timer = 60;
+		currstate = B3State.ThrowAttack;
+	}
+	void SetSpin(){
+		timer = 180;
+		currstate = B3State.Spin;
+	}
+	void SetPrep(){
+		timer = 80;
+		currstate = B3State.Prep;
+	}
+	void SetCharge(){
+		timer = 120;
+		currstate = B3State.Charge;
+	}
+	void SetStun(){
+		timer = 120;
+		currstate = B3State.Stun;
+	}
+	void SetDie(){
+		timer = 30;
+		currstate = B3State.Die;
 	}
 }

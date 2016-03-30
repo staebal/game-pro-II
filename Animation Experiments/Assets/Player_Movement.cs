@@ -25,4 +25,10 @@ public class Player_Movement : MonoBehaviour {
 		}
 		rbody.MovePosition (rbody.position + movement_vector * 3 * Time.deltaTime);
 	}
+
+	//Collision Check
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		other.gameObject.SendMessage ("ApplyDamage", 10);
+	}
 }

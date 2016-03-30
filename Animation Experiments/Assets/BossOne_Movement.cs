@@ -119,26 +119,14 @@ public class BossOne_Movement : MonoBehaviour {
 		float i = (float)currstate;
 		anim.SetFloat ("State_Flag", i);
 	}
-
-	//Collision Check
-	void OnCollisionEnter2D(Collision2D other)
-	{
-		if (other.gameObject.tag == "Player")
-		{
-			if (currstate == B1State.Align || currstate == B1State.Attack
-			   || currstate == B1State.Tired || currstate == B1State.Stun) {
-				ApplyDamage (10);
-			}
-		}
-	}
-
+		
 	void ApplyDamage(int damageamount){
 
-		if (currstate != B1State.Stun) {
+		if (currstate == B1State.Align || currstate == B1State.Attack
+			|| currstate == B1State.Tired) {
 			SetStun ();
 		}
-		if ((hitblink <= 0) && (currstate == B1State.Align || currstate == B1State.Attack
-			|| currstate == B1State.Tired || currstate == B1State.Stun)) {
+		if ((hitblink <= 0) && (currstate == B1State.Stun)) {
 			hitblink = 30;
 			anim.SetBool("Hit_Blink", true);
 			health -= damageamount;
