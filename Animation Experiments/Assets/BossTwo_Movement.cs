@@ -6,7 +6,7 @@ public class BossTwo_Movement : MonoBehaviour {
 	enum B2State {Idle, Summon, Chase, Attack, Die};
 
 	//public GameObject lionPreFab;
-	//public GameObject whipPreFab;
+	public GameObject whipPreFab;
 	float startx;
 	float starty;
 	float summonx;
@@ -35,8 +35,8 @@ public class BossTwo_Movement : MonoBehaviour {
 		target = GameObject.FindWithTag("Player").transform; //target the player
 		startx = transform.position.x;
 		starty = transform.position.y;
-		summonx = (float)(startx + 1.25);
-		summony = starty;
+		summonx = (float)startx;
+		summony = (float)(starty + 1.25);
 	}
 	
 	// Update is called once per frame
@@ -58,6 +58,8 @@ public class BossTwo_Movement : MonoBehaviour {
 				SetChaseStart ();
 			} else if (timer % 30 == 15) {
 				//Create lion
+				Instantiate (whipPreFab, new Vector2(Random.Range(startx-1.5F, startx+1.5F), starty),
+					transform.rotation);
 			}
 			break;
 		//Chase
@@ -112,8 +114,22 @@ public class BossTwo_Movement : MonoBehaviour {
 			attackblink--;
 			if (attackblink <= 0) {
 				SetChaseContinue ();
-			} else if (attackblink == 5) {
+			} else if (attackblink == 15) {
 				//Summon whip image
+				if (dir_y == -1) {
+					Instantiate (whipPreFab, (transform.position - transform.up),
+						transform.rotation);
+				} else if (dir_y == 1) {
+					Instantiate (whipPreFab, (transform.position + transform.up),
+						transform.rotation);
+				} else if (dir_x == -1) {
+					Instantiate (whipPreFab, (transform.position - transform.right),
+						transform.rotation);
+				} else {
+					Instantiate (whipPreFab, (transform.position + transform.up),
+						transform.rotation);
+				}
+
 			}
 			break;
 		//Die
