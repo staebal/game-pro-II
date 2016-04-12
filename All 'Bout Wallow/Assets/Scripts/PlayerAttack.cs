@@ -21,6 +21,11 @@ public class PlayerAttack : MonoBehaviour {
 	public Transform weaponSouth;
 	public Transform weaponEast;
 	public Transform weaponWest;
+	// sword rof
+	public int swingTime;
+	
+	// current sword timer 
+	private int currentTime;
 	
 	// local variables to declare
 	//Animator animator;
@@ -29,39 +34,40 @@ public class PlayerAttack : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//animator = GetComponent<Animator> ();
-		swipeTransform = swipe.GetComponent<Transform> ();
+		//swipeTransform = swipe.GetComponent<Transform> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		// decrement swing fire rate
+		currentTime--;
+		
 		// vector inputs to determine direction of trigger and animations
 		Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 		
 		// big if statement!!!
-		if(Input.GetButtonDown("Sword")){	// if using sword
+		if(Input.GetButtonDown("Sword") && currentTime<=0){	// if using sword
+			// set rof delay timer
+			currentTime = swingTime;
 			// activate collision trigger dependent on current input axis
 			// moving left
-			if (movementVector.x >= 1){
-				// rotate swipe image +180
-				swipeTransform.Rotate(0, 0, 180);
+			if (movementVector.x < 0){
+				//Debug.Log ("swipe left!");
 				Instantiate(swipe, weaponWest.position, weaponWest.rotation);
 			}
 			// moving right
-			else if (movementVector.x <= -1){
-				// default sprite orientation is correct
-				swipeTransform.Rotate(0, 0, 0);
+			else if (movementVector.x > 0){
+				//Debug.Log ("swipe right!");
 				Instantiate(swipe, weaponEast.position, weaponEast.rotation);
 			}
 			// moving up
-			else if (movementVector.y >= 1){
-				// rotate swipe image +90
-				swipeTransform.Rotate(0, 0, 90);
+			else if (movementVector.y > 0){
+				//Debug.Log ("swipe up!");
 				Instantiate(swipe, weaponNorth.position, weaponNorth.rotation);
 			}
 			// moving down OR idle
-			else if (movementVector.y <= -1 || (movementVector.x==0 && movementVector.y==0)){
-				// rotate swipe image -90
-				swipeTransform.Rotate(0, 0, -90);
+			else if (movementVector.y < 0 || (movementVector.x==0 && movementVector.y==0)){
+				//Debug.Log ("swipe down!");
 				Instantiate(swipe, weaponSouth.position, weaponSouth.rotation);
 			}
 			

@@ -5,27 +5,21 @@ using System.Collections;
 
 public class SwipeDuration : MonoBehaviour {
 
-	// time the swipe remains on screen
-	public float aliveTime;
-
-	GameObject gObj;
-
 	// the starting time of swipe creation
-	private float startTime;
+	private int swipeTimer;
 	
 	// Use this for initialization
 	void Start () {
-		gObj = GetComponent<GameObject> ();
-		startTime = Time.time;
+		swipeTimer = 5;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		// check difference between starting and current time
-		while(Time.time-startTime < aliveTime){	
-			// waiting loop
+		swipeTimer--;
+		// check current swipe time
+		if(swipeTimer<=0){	
+			// destroy object instance after x time of being alive
+			Destroy(gameObject);
 		}
-		// destroy object instance after x time of being alive
-		Destroy(gObj);
 	}
 }

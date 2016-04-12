@@ -18,7 +18,7 @@ public class testTransitions : MonoBehaviour {
 	
 
 	void Start () {
-		curScene = SceneManager.GetActiveScene().buildIndex;
+		//curScene = SceneManager.GetActiveScene().buildIndex;
 	}
 	
 	// Update is called once per frame
