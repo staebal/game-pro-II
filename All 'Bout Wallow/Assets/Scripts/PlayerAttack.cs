@@ -28,12 +28,12 @@ public class PlayerAttack : MonoBehaviour {
 	private int currentTime;
 	
 	// local variables to declare
-	//Animator animator;
+	Animator animator;
 	Transform swipeTransform;
 
 	// Use this for initialization
 	void Start () {
-		//animator = GetComponent<Animator> ();
+		animator = GetComponent<Animator> ();
 		//swipeTransform = swipe.GetComponent<Transform> ();
 	}
 	
@@ -47,6 +47,11 @@ public class PlayerAttack : MonoBehaviour {
 		
 		// big if statement!!!
 		if(Input.GetButtonDown("Sword") && currentTime<=0){	// if using sword
+			// do matching sword swipe animation (should get animation directions from PlayerMover)
+			animator.SetBool("IsUsingSword", true);
+			animator.SetFloat("InputX", movementVector.x);
+			animator.SetFloat("InputY", movementVector.y);
+		
 			// set rof delay timer
 			currentTime = swingTime;
 			// activate collision trigger dependent on current input axis
@@ -70,14 +75,9 @@ public class PlayerAttack : MonoBehaviour {
 				//Debug.Log ("swipe down!");
 				Instantiate(swipe, weaponSouth.position, weaponSouth.rotation);
 			}
-			
-			// do matching sword swipe animation (should get animation directions from PlayerMover)
-			//animator.SetBool("IsUsingSword", true);
-			//animator.SetFloat("InputX", movementVector.x);
-			//animator.SetFloat("InputY", movementVector.y);
 		}
 		else {								// if not using sword
-			//animator.SetBool("IsUsingSword", false);
+			animator.SetBool("IsUsingSword", false);
 		}
 	}
 }
