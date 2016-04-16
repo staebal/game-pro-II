@@ -61,13 +61,17 @@
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
      <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
+     <None Include="Assets\Tiled2Unity\Imported\swordswallower.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Imported\Common Quarters Hallway 2.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Imported\arena1.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Imported\Sword Swallower Room.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Textures\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Imported\slick pillar arena.tiled2unity.xml" />
+     <None Include="Assets\Tiled2Unity\Imported\carnivalgrounds.tiled2unity.xml" />
+     <None Include="Assets\Tiled2Unity\Imported\firearena.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Imported\Lion Tamer Room.tiled2unity.xml" />
+     <None Include="Assets\Tiled2Unity\Imported\lionarena.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Shaders\shaColorKey.shader" />
      <None Include="Assets\Tiled2Unity\License.txt" />
      <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />

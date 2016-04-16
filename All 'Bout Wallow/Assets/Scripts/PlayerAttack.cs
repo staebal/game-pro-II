@@ -45,7 +45,7 @@ public class PlayerAttack : MonoBehaviour {
 		// vector inputs to determine direction of trigger and animations
 		Vector2 movementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 		
-		// big if statement!!!
+		// if using weapon statement
 		if(Input.GetButtonDown("Sword") && currentTime<=0){	// if using sword
 			// do matching sword swipe animation (should get animation directions from PlayerMover)
 			animator.SetBool("IsUsingSword", true);
@@ -54,6 +54,13 @@ public class PlayerAttack : MonoBehaviour {
 		
 			// set rof delay timer
 			currentTime = swingTime;
+		}
+		else {								// if not using sword
+			animator.SetBool("IsUsingSword", false);
+		}
+		
+		// if timer activated statement
+		if (currentTime==swingTime-2){
 			// activate collision trigger dependent on current input axis
 			// moving left
 			if (movementVector.x < 0){
@@ -75,9 +82,6 @@ public class PlayerAttack : MonoBehaviour {
 				//Debug.Log ("swipe down!");
 				Instantiate(swipe, weaponSouth.position, weaponSouth.rotation);
 			}
-		}
-		else {								// if not using sword
-			animator.SetBool("IsUsingSword", false);
 		}
 	}
 }
