@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/4.1 Bragging and the Final Bout.unity
+- path: Assets/_Scenes/1.2 Cake and Insults.unity
   isLoaded: 1
   isActive: 1

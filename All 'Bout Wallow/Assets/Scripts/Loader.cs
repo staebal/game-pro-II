@@ -12,7 +12,7 @@ public class Loader : MonoBehaviour
 	{
 		//Check if a GameManager has already been assigned to static variable GameManager.instance or if it's still null
 		//Instantiate gameManager prefab
-		if (GameManager.instance == null)
+		if (gameManager == null)
 			Instantiate(gameManager);
 		Debug.Log ("Loader is up!");
 	}

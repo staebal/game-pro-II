@@ -1,12 +1,17 @@
-// http://unity3d.com/learn/tutorials/projects/2d-roguelike-tutorial/writing-game-manager?playlist=17150
-// https://www.youtube.com/watch?v=NY2WB28I_X8
-// http://www.fizixstudios.com/labs/do/view/id/unity-game-state-manager
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+
+/* 
+ http://unity3d.com/learn/tutorials/projects/2d-roguelike-tutorial/writing-game-manager?playlist=17150
+ https://www.youtube.com/watch?v=NY2WB28I_X8
+ http://www.fizixstudios.com/labs/do/view/id/unity-game-state-manager
+*/
+
     
 public class GameManager : MonoBehaviour{
-	static GameManager instance = null;              // Static instance of GameManager which allows it to be accessed by any other script.
+	//public GameManager instance = null;              // Static instance of GameManager which allows it to be accessed by any other script.
+    public GameObject manager = null;
 	
 	//private int currentSceneIndexInt;
 	
@@ -27,23 +32,26 @@ public class GameManager : MonoBehaviour{
 	void Awake(){
 		// Check if instance already exists
 		// if not, set instance to this
-		if (instance == null)
-			instance = this;
+		//if (instance == null)
+		//	instance = this;
 		// If instance already exists and it's not this:
 		// Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
-		else if (instance != this)
-			Destroy(gameObject);    
+		//else if (instance != this)
+		//	Destroy(gameObject);    
 		
 		// Sets this to not be destroyed when reloading scene
-		DontDestroyOnLoad(gameObject);
+		DontDestroyOnLoad(manager);
 	}
-	
+    void Update()
+    {
+        
+    }
 	// creates target game scene
 	public void ChangeToScene(string targetSceneString){
 		// call function from scene manager to set up next scene
-		//SwitchScene(targetSceneString);
-		SceneManager.LoadScene(targetSceneString, LoadSceneMode.Single);
-	} 
+		SceneManager.LoadScene(targetSceneString);
+
+	}
 	
 	//void SwitchScene(string targetSceneString){
 	//	SceneManager.LoadScene(targetSceneString, LoadSceneMode.Single);
