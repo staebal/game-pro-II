@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 92e3fa5c0db167845a37e239da4f436d
-timeCreated: 1455153987
+guid: c5f4577653f962b46bdf0071d393eb1c
+timeCreated: 1458183057
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -77,13 +77,13 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 8
+  cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
@@ -102,7 +102,7 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
@@ -118,8 +118,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_1
       rect:
         serializedVersion: 2
@@ -128,8 +133,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_2
       rect:
         serializedVersion: 2
@@ -138,8 +148,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_3
       rect:
         serializedVersion: 2
@@ -148,8 +163,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_4
       rect:
         serializedVersion: 2
@@ -158,8 +178,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_5
       rect:
         serializedVersion: 2
@@ -168,8 +193,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_6
       rect:
         serializedVersion: 2
@@ -178,8 +208,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_7
       rect:
         serializedVersion: 2
@@ -188,8 +223,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_8
       rect:
         serializedVersion: 2
@@ -198,8 +238,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_9
       rect:
         serializedVersion: 2
@@ -208,8 +253,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_10
       rect:
         serializedVersion: 2
@@ -218,8 +268,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_11
       rect:
         serializedVersion: 2
@@ -228,8 +283,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_12
       rect:
         serializedVersion: 2
@@ -238,8 +298,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_13
       rect:
         serializedVersion: 2
@@ -248,8 +313,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_14
       rect:
         serializedVersion: 2
@@ -258,8 +328,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_15
       rect:
         serializedVersion: 2
@@ -268,8 +343,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_16
       rect:
         serializedVersion: 2
@@ -278,8 +358,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_17
       rect:
         serializedVersion: 2
@@ -288,8 +373,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_18
       rect:
         serializedVersion: 2
@@ -298,8 +388,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_19
       rect:
         serializedVersion: 2
@@ -308,8 +403,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_20
       rect:
         serializedVersion: 2
@@ -318,8 +418,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_21
       rect:
         serializedVersion: 2
@@ -328,8 +433,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_22
       rect:
         serializedVersion: 2
@@ -338,8 +448,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_23
       rect:
         serializedVersion: 2
@@ -348,8 +463,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_24
       rect:
         serializedVersion: 2
@@ -358,8 +478,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_25
       rect:
         serializedVersion: 2
@@ -368,8 +493,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_26
       rect:
         serializedVersion: 2
@@ -378,8 +508,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_27
       rect:
         serializedVersion: 2
@@ -388,8 +523,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_28
       rect:
         serializedVersion: 2
@@ -398,8 +538,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_29
       rect:
         serializedVersion: 2
@@ -408,8 +553,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_30
       rect:
         serializedVersion: 2
@@ -418,8 +568,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_31
       rect:
         serializedVersion: 2
@@ -428,8 +583,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_32
       rect:
         serializedVersion: 2
@@ -438,8 +598,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_33
       rect:
         serializedVersion: 2
@@ -448,8 +613,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_34
       rect:
         serializedVersion: 2
@@ -458,8 +628,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_35
       rect:
         serializedVersion: 2
@@ -468,8 +643,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_36
       rect:
         serializedVersion: 2
@@ -478,8 +658,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_37
       rect:
         serializedVersion: 2
@@ -488,8 +673,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_38
       rect:
         serializedVersion: 2
@@ -498,8 +688,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_39
       rect:
         serializedVersion: 2
@@ -508,8 +703,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_40
       rect:
         serializedVersion: 2
@@ -518,8 +718,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_41
       rect:
         serializedVersion: 2
@@ -528,8 +733,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_42
       rect:
         serializedVersion: 2
@@ -538,8 +748,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_43
       rect:
         serializedVersion: 2
@@ -548,8 +763,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_44
       rect:
         serializedVersion: 2
@@ -558,8 +778,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_45
       rect:
         serializedVersion: 2
@@ -568,8 +793,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_46
       rect:
         serializedVersion: 2
@@ -578,8 +808,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_47
       rect:
         serializedVersion: 2
@@ -588,8 +823,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_48
       rect:
         serializedVersion: 2
@@ -598,8 +838,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_49
       rect:
         serializedVersion: 2
@@ -608,8 +853,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_50
       rect:
         serializedVersion: 2
@@ -618,8 +868,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_51
       rect:
         serializedVersion: 2
@@ -628,8 +883,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_52
       rect:
         serializedVersion: 2
@@ -638,8 +898,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_53
       rect:
         serializedVersion: 2
@@ -648,8 +913,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_54
       rect:
         serializedVersion: 2
@@ -658,8 +928,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_55
       rect:
         serializedVersion: 2
@@ -668,8 +943,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_56
       rect:
         serializedVersion: 2
@@ -678,8 +958,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_57
       rect:
         serializedVersion: 2
@@ -688,8 +973,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_58
       rect:
         serializedVersion: 2
@@ -698,8 +988,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
     - name: Player_59
       rect:
         serializedVersion: 2
@@ -708,8 +1003,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

@@ -25,11 +25,5 @@ public class I_1Intro : MonoBehaviour {
 		//}
 		// else do nothing
 	}
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if(col.gameObject.tag=="Player")
-        {
-            manager.ChangeToScene("1.2 Cake and Insults");
-        }
-    }
+    
 }
