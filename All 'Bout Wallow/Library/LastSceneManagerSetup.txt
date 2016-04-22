@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/2.4 Hallway.unity
+- path: Assets/_Scenes/1.1 Intro.unity
   isLoaded: 1
   isActive: 1
