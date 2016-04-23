@@ -1,8 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\BossTwo_Movement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BossThree_Movement.cs">
     <Files>
-      <File FileName="Assets\BossTwo_Movement.cs" Line="61" Column="79" />
+      <File FileName="Assets\Scripts\BossThree_Movement.cs" Line="42" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

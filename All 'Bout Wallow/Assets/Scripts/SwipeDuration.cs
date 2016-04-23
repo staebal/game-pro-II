@@ -22,4 +22,13 @@ public class SwipeDuration : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
+
+	//Collision Check
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		if (other.gameObject.tag == "Boss") {
+			other.gameObject.SendMessage("ApplyDamage", 1);
+		}
+
+	}
 }
