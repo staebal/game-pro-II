@@ -6,15 +6,11 @@ public class PlayerMover : MonoBehaviour {
 	public float speed;
 	Rigidbody2D rBody;
 	Animator animator;
-	int hitblink;
-	int health;
 
 	// Use this for initialization
 	void Start () {
 		rBody = GetComponent<Rigidbody2D> ();
 		animator = GetComponent<Animator> ();
-		hitblink = 0;
-		health = 20;
 	}
 	
 	// use this once per frame
@@ -31,7 +27,9 @@ public class PlayerMover : MonoBehaviour {
 		}
 		
 		// Prehaps ugrade to utilize FixedUpdate()?
-		rBody.MovePosition(rBody.position + movementVector * speed * Time.deltaTime);
+		if(animator.GetInteger("CurrentState") == 0){
+			rBody.MovePosition(rBody.position + movementVector * speed * Time.deltaTime);
+		}
 		
 	}
 	
@@ -52,30 +50,5 @@ public class PlayerMover : MonoBehaviour {
 		//Input.GetAxisRaw("Horizontal");
 		//Input.GetAxisRaw("Vertical");
 	//}
-
-	//Take Damage
-	void ApplyDamage(int damageamount)
-	{
-		if (hitblink <= 0)
-		{
-			hitblink = 30;
-			health -= damageamount;
-			if (health <= 0){
-				animator.SetBool("IsDying", true);
-			}else{
-				animator.SetBool("IsHurt", true);
-			}
-		}
-	}
-
-	void StartDancing()
-	{
-		hitblink = 30;
-		animator.SetBool("IsDying", false);
-		animator.SetBool("IsHurt", false);
-		animator.SetBool("IsDancing", true);
-	}
-
-
 
 }
