@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A5D72071-F49A-9F21-4FA0-440CDCC93F4D}</ProjectGuid>
+    <ProjectGuid>{461D191B-76A0-6890-036E-784762E9BE63}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -50,6 +50,8 @@
      <Compile Include="Assets\DownFire_Movement.cs" />
      <Compile Include="Assets\ExitScene.cs" />
      <Compile Include="Assets\FlashFire_Movement.cs" />
+     <Compile Include="Assets\Scripts\CSVReader.cs" />
+     <Compile Include="Assets\Scripts\Dialoginator.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\I_1Intro.cs" />
      <Compile Include="Assets\Scripts\I_2PreFire.cs" />
