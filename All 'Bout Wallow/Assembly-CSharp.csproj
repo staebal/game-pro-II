@@ -51,6 +51,8 @@
      <Compile Include="Assets\Scripts\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\PlayerMover.cs" />
      <Compile Include="Assets\Scripts\SwipeDuration.cs" />
+     <Compile Include="Assets\Scripts\WallowFireBall_Move.cs" />
+     <Compile Include="Assets\Scripts\WallowWhip_Move.cs" />
      <Compile Include="Assets\Scripts\gameManagementTesting\Manager.cs" />
      <Compile Include="Assets\Scripts\gameManagementTesting\Player_Movement.cs" />
      <Compile Include="Assets\Scripts\gameManagementTesting\testTransititons.cs" />

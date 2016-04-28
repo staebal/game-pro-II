@@ -27,7 +27,9 @@ public class SwipeDuration : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		if (other.gameObject.tag == "Boss") {
-			other.gameObject.SendMessage("ApplyDamage", 1);
+			other.gameObject.SendMessage ("ApplyDamage", 1);
+		} else {
+			other.gameObject.SendMessage ("SwipeDamage", 1);
 		}
 
 	}
