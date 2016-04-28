@@ -45,18 +45,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BossOne_Movement.cs" />
-     <Compile Include="Assets\Boss_One_Movement.cs" />
-     <Compile Include="Assets\DownFire_Movement.cs" />
-     <Compile Include="Assets\ExitScene.cs" />
-     <Compile Include="Assets\FlashFire_Movement.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\I_1Intro.cs" />
-     <Compile Include="Assets\Scripts\I_2PreFire.cs" />
-     <Compile Include="Assets\Scripts\Loader.cs" />
-     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
-     <Compile Include="Assets\Scripts\PlayerMover.cs" />
-     <Compile Include="Assets\Scripts\SwipeDuration.cs" />
+     <Compile Include="Assets\Scripts\Boss AI\BossOne_Movement.cs" />
+     <Compile Include="Assets\Scripts\Boss AI\BossThree_Movement.cs" />
+     <Compile Include="Assets\Scripts\Boss AI\BossTwo_Movement.cs" />
+     <Compile Include="Assets\Scripts\Interaction and Management\ExitScene.cs" />
+     <Compile Include="Assets\Scripts\Interaction and Management\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Interaction and Management\I_Credits.cs" />
+     <Compile Include="Assets\Scripts\Interaction and Management\I_Title.cs" />
+     <Compile Include="Assets\Scripts\Interaction and Management\I_Victory.cs" />
+     <Compile Include="Assets\Scripts\Interaction and Management\Loader.cs" />
+     <Compile Include="Assets\Scripts\Wallow\PlayerAttack.cs" />
+     <Compile Include="Assets\Scripts\Wallow\PlayerMover.cs" />
+     <Compile Include="Assets\Scripts\Weaponry\DownFire_Movement.cs" />
+     <Compile Include="Assets\Scripts\Weaponry\FireBall_Move.cs" />
+     <Compile Include="Assets\Scripts\Weaponry\FireWall_Move.cs" />
+     <Compile Include="Assets\Scripts\Weaponry\LionMove_Script.cs" />
+     <Compile Include="Assets\Scripts\Weaponry\Sardine_Move.cs" />
+     <Compile Include="Assets\Scripts\Weaponry\SwipeDuration.cs" />
+     <Compile Include="Assets\Scripts\Weaponry\ThowSword_Move.cs" />
+     <Compile Include="Assets\Scripts\Weaponry\Whip_Move.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
