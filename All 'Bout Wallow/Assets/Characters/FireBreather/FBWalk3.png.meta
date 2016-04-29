@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 835bd4f9ea09d35459b9c9a16e211520
 timeCreated: 1461211286
+=======
+guid: 15143c6cd9605e447b72e8149188283d
+timeCreated: 1461220099
+>>>>>>> refs/remotes/origin/robbie's-scenetransition
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

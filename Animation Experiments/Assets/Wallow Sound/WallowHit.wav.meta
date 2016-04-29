@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 9a5f95aad227937468fcb06a79356b03
 timeCreated: 1461271416
+=======
+guid: 36fbaad778d51a048a89f9add51b494b
+timeCreated: 1461220703
+>>>>>>> refs/remotes/origin/robbie's-scenetransition
 licenseType: Free
 AudioImporter:
   serializedVersion: 6

@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 9a117b6a78fd15846a74b8aa1b3a38fd
 folderAsset: yes
 timeCreated: 1461271404
+=======
+guid: b7f29124aa0897f44a74226eaed2d019
+folderAsset: yes
+timeCreated: 1461220690
+>>>>>>> refs/remotes/origin/robbie's-scenetransition
 licenseType: Free
 DefaultImporter:
   userData: 

@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: f40e56d3ae8b15341a3a7b9f8cd62cba
 timeCreated: 1461271404
+=======
+guid: cf5cbcde4542fda4bb55713278a3d3f9
+timeCreated: 1461220690
+>>>>>>> refs/remotes/origin/robbie's-scenetransition
 licenseType: Free
 DefaultImporter:
   userData: 
