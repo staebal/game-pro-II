@@ -16,7 +16,12 @@ public class DownFire_Movement : MonoBehaviour {
 	//Collision Check
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		Destroy (this.gameObject);
-		Destroy (this);
+		if (other.gameObject.tag == "Boss" || other.gameObject.tag == "Cage") {
+			other.gameObject.SendMessage("ApplyDamage", 1, SendMessageOptions.DontRequireReceiver);
+		}
+		if (other.gameObject.tag != "Player"){
+			Destroy (this.gameObject);
+			Destroy (this);
+		}
 	}
 }

@@ -7,6 +7,7 @@ public class BossTwo_Movement : MonoBehaviour {
 
 	public GameObject lionPreFab;
 	public GameObject whipPreFab;
+	public GameObject exit;
 	//public lionsab;
 	float startx;
 	float starty;
@@ -28,7 +29,7 @@ public class BossTwo_Movement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		SetIdle ();
-		health = 10;
+		health = 6;
 		attackblink = 0;
 		hitblink = 0;
 
@@ -57,7 +58,7 @@ public class BossTwo_Movement : MonoBehaviour {
 		case B2State.Summon:
 			if (timer <= 0) {
 				SetChaseStart ();
-			} else if (timer % 30 == 15) {
+			} else if (timer % 30 == 15 && GameManager.instance.getCageWasWelded()==false) {
 				//Create lion
 				//if(!lionsab){
 				Instantiate (lionPreFab, new Vector2(Random.Range(startx-1.5F, startx+1.5F), starty),
@@ -140,6 +141,7 @@ public class BossTwo_Movement : MonoBehaviour {
 			if (timer <= 0) {
 				Destroy (this);
 				Destroy (this.gameObject);
+				exit.SetActive(true);
 			}
 			break;
 		}//End update current action
@@ -156,6 +158,22 @@ public class BossTwo_Movement : MonoBehaviour {
 		anim.SetFloat ("Y_Dir", dir_y);
 
 	}
+	
+	// ***HACK? CHANGE LATER?
+	// Start
+	void ApplyDamage(int damageamount){
+		
+		if ((hitblink <= 0)) {
+			hitblink = 30;
+			anim.SetBool("Hit_Blink", true);
+			health -= damageamount;
+			if (health <= 0) {
+				SetDie ();
+			}
+		}
+		//Debug.Log ("Boss Health Lowered to: " + health);
+	}
+	// End
 
 	void SetIdle(){
 		timer = 40;

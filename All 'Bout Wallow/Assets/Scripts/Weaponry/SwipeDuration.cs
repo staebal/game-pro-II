@@ -26,6 +26,7 @@ public class SwipeDuration : MonoBehaviour {
 	//Collision Check
 	void OnCollisionEnter2D(Collision2D other)
 	{
+		Debug.Log ("Wallow inflicted sword damage!");
 		if (other.gameObject.tag == "Boss") {
 			other.gameObject.SendMessage("ApplyDamage", 1);
 		}

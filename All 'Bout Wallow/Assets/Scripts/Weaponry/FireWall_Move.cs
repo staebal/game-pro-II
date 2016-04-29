@@ -22,7 +22,7 @@ public class FireWall_Move : MonoBehaviour {
 	//Collision Check
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		other.gameObject.SendMessage("ApplyDamage", 2);
+		other.gameObject.SendMessage("ApplyDamage", 2, SendMessageOptions.DontRequireReceiver);
 		Destroy (this.gameObject);
 		Destroy (this);
 	}

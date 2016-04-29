@@ -28,7 +28,7 @@ public class ThowSword_Move : MonoBehaviour {
 	//Collision Check
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		other.gameObject.SendMessage("ApplyDamage", 1);
+		other.gameObject.SendMessage("ApplyDamage", 1, SendMessageOptions.DontRequireReceiver);
 		Destroy (this.gameObject);
 		Destroy (this);
 	}

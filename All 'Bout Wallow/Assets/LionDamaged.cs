@@ -16,7 +16,7 @@ public class LionDamaged : MonoBehaviour {
     void ApplyDamage(int damageamount)
     {
         if(GameManager.instance)
-        GameManager.instance.setCageWasWelded(true);
+			GameManager.instance.setCageWasWelded(true);
         this.gameObject.SetActive(false);
         swapCage.SetActive(true);
     }

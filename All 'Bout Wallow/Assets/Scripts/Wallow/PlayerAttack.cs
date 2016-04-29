@@ -7,9 +7,11 @@
 // http://docs.unity3d.com/ScriptReference/Transform.Rotate.html
 // http://docs.unity3d.com/ScriptReference/Vector3.html
 // http://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html
+// http://answers.unity3d.com/questions/14637/get-the-currently-open-scene-name-or-file-name.html
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerAttack : MonoBehaviour {
 
@@ -44,7 +46,7 @@ public class PlayerAttack : MonoBehaviour {
 		currstate = WallowState.IdleMove;
 		currentTime = 0;
 		hitblink = false;
-		health = 15;
+		health = 6;
 		//swipeTransform = swipe.GetComponent<Transform> ();
 	}
 	
@@ -104,25 +106,26 @@ public class PlayerAttack : MonoBehaviour {
 		case WallowState.AbilityFire:
 			if (currentTime==(swingTime-2)){
 				// activate collision trigger dependent on current input axis
+				// messed up rotation values are result of assumption that all weapon sprites are drawn facing east (right)
 				// moving left
 				if (xface < 0){
-					//Debug.Log ("swipe left!");
-					Instantiate(fireball, weaponWest.position, weaponWest.rotation);
+					Debug.Log ("shoot left!");
+					Instantiate(fireball, weaponWest.position, weaponSouth.rotation);
 				}
 				// moving right
 				else if (xface > 0){
-					//Debug.Log ("swipe right!");
-					Instantiate(fireball, weaponEast.position, weaponEast.rotation);
+					Debug.Log ("shoot right!");
+					Instantiate(fireball, weaponEast.position, weaponNorth.rotation);
 				}
 				// moving up
 				else if (yface > 0){
-					//Debug.Log ("swipe up!");
-					Instantiate(fireball, weaponNorth.position, weaponNorth.rotation);
+					Debug.Log ("shoot up!");
+					Instantiate(fireball, weaponNorth.position, weaponWest.rotation);
 				}
 				// moving down OR idle
 				else{
-					//Debug.Log ("swipe down!");
-					Instantiate(fireball, weaponSouth.position, weaponSouth.rotation);
+					Debug.Log ("shoot down!");
+					Instantiate(fireball, weaponSouth.position, weaponEast.rotation);
 				}
 			}
 			break;
@@ -154,6 +157,26 @@ public class PlayerAttack : MonoBehaviour {
 		case WallowState.Hurt:
 			break;
 		case WallowState.Death:
+			if (currentTime <= 0) {
+				Destroy (this);
+				Destroy (this.gameObject);
+				Scene scene = SceneManager.GetActiveScene();
+				//scene.name; yields name of scene
+				// go back to pre rigging scene
+				// reset rigs
+				if(scene.name == "2.1 Getting Burned"){
+					GameManager.instance.rigReset(1);
+					GameManager.instance.ChangeToScene("1.2 Cake and Insults");
+				}
+				else if(scene.name == "3.1 Now Watch Me Whip"){
+					GameManager.instance.rigReset(2);
+					GameManager.instance.ChangeToScene("2.3 Wallow's Room");
+				}
+				else if(scene.name == "4.1 Bragging and the Final Bout"){
+					GameManager.instance.rigReset(3);
+					GameManager.instance.ChangeToScene("3.1.3 Wallow's Room");
+				}
+			}
 			break;
 		case WallowState.Victory:
 			break;
@@ -175,6 +198,7 @@ public class PlayerAttack : MonoBehaviour {
 				currstate = WallowState.Hurt;
 			}
 		}
+		//Debug.Log ("Wallow Health Lowered to: " + health);
 	}
 
 	void StartDancing()

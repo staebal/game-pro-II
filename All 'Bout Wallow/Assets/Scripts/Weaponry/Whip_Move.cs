@@ -26,9 +26,9 @@ public class Whip_Move : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		if (!whipsab) {
-			other.gameObject.SendMessage ("ApplyDamage", 2);
+			other.gameObject.SendMessage ("ApplyDamage", 2, SendMessageOptions.DontRequireReceiver);
 		} else {
-			other.gameObject.SendMessage ("ApplyDamage", 1);
+			other.gameObject.SendMessage ("ApplyDamage", 1, SendMessageOptions.DontRequireReceiver);
 		}
 		Destroy (this.gameObject);
 		Destroy (this);
