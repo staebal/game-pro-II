@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/_Scenes/2.2.1 Gentleman Sabotage.unity
-  isLoaded: 1
-  isActive: 1

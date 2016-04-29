@@ -48,6 +48,8 @@
      <Compile Include="Assets\Scripts\Boss AI\BossOne_Movement.cs" />
      <Compile Include="Assets\Scripts\Boss AI\BossThree_Movement.cs" />
      <Compile Include="Assets\Scripts\Boss AI\BossTwo_Movement.cs" />
+     <Compile Include="Assets\Scripts\Dialoginator.cs" />
+     <Compile Include="Assets\Scripts\Interaction and Management\CSVReader.cs" />
      <Compile Include="Assets\Scripts\Interaction and Management\ExitScene.cs" />
      <Compile Include="Assets\Scripts\Interaction and Management\GameManager.cs" />
      <Compile Include="Assets\Scripts\Interaction and Management\I_Credits.cs" />
