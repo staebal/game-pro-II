@@ -1,0 +1,58 @@
+Character,
+W,"Hey, Smoky."
+FB,Aha! So you finally arrive! I was worried you'd have run to the next town.
+W,Wouldn't miss going against you for the world.
+FB,I wouldn't miss you either. My aim is too good to miss you.
+W,"Go on ahead and laugh, while you still have lungs."
+FB,Heheheeheh! How do you plan to beat me? You don't even have a weapon!
+W,"Yes, I do."
+FB,!?! ...where?
+W,I found a sword in the garbage. The Sword Swallow must've chucked it out.
+FB,Well... I....
+W,What?
+FB,"N-n-nothing. Saay, how about, uh, a snack?"
+W,Snack?
+FB,Did I stutter?
+W,Yes.
+FB,Never mind the details! This cake... it's to die for!
+,"
+"
+Choices,"""Okay"" ""No!"" ""*Say Nothing*"""
+,
+,"
+"
+"Choice- ""Okay""
+","
+"
+W,...ooh
+FB,Yes?
+W,What was in that cake?
+FB,"Oh, you know. Flour, sugar, almond butter, vanilla, poison, eggs..."
+W,Oh no.
+FB,That's right fool! Poison!
+W,"Oh, I can stand the poison. The slop the boss feeds me is worse. But almonds... I have allergies."
+FB,"Uh... that's what I meant! Almonds, fool! See you at the big top!"
+,
+,
+"Choice- ""No!""",
+FB,Oh come on! Please!
+W,No. You obviously poisoned it!
+FB,"Whaaa? I did no such thing! Pretty please, with a cherry on top?"
+W,More like skull and crossbones on top.
+FB,"Oh, that? That's just the garnishing. Come on."
+W,No!
+FB,Fine! See you at the big top!
+,
+,
+"Choice- ""*Say Nothing*""",
+FB,..What? What's wrong? It's good.
+W,...
+FB,"Oh, come on! Just look at it! It's so good. It's got icing, and chocolate.."
+W,...
+FB,"Almond butter, too! That's.. the best..."
+W,...
+FB,Fine! More for me!
+FB,*Gulp*
+FB,"Yeah, that was gooo... uh oh."
+W,...
+FB,"Ooh... ow ow ow. Uh, I'll just see you at the big top. Oooooohhhhh....."
