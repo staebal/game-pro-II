@@ -71,6 +71,7 @@
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledInitialShaderProperties.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
+     <Compile Include="Assets\choiceButtons.cs" />
      <None Include="Assets\Tiled2Unity\Imported\Firebreather Room.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Shaders\shaDefault.shader" />
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
