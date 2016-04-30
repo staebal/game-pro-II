@@ -27,7 +27,7 @@ public class PlayerMover : MonoBehaviour {
 		}
 		
 		// Prehaps ugrade to utilize FixedUpdate()?
-		if(animator.GetInteger("CurrentState") == 0){
+		if(true /*animator.GetInteger("CurrentState") == 0*/){
 			rBody.MovePosition(rBody.position + movementVector * speed * Time.deltaTime);
 		}
 		
