@@ -1,0 +1,2 @@
+When you complete a feature on a branch, put it this folder with the files needed to create it with a unity export of that complete feature. 
+dditional files mean a new folder with all the pieces.
