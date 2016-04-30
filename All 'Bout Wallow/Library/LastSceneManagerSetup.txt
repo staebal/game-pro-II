@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/2.3 Wallow's Room.unity
+- path: Assets/_Scenes/4.1 Bragging and the Final Bout.unity
   isLoaded: 1
   isActive: 1
