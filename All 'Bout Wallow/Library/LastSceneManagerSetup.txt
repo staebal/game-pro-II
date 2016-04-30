@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/1.1 Intro.unity
+- path: Assets/_Scenes/3.3 Liontamer's Lament.unity
   isLoaded: 1
   isActive: 1
