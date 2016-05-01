@@ -7,7 +7,11 @@ public class BossTwo_Movement : MonoBehaviour {
 
 	public GameObject lionPreFab;
 	public GameObject whipPreFab;
-	public GameObject exit;
+	public AudioClip hitSound;
+	public AudioClip dieSound;
+	private AudioSource source;
+	private float volLowRange = .5f;
+	private float volHighRange = 1.0f;
 	//public lionsab;
 	float startx;
 	float starty;
@@ -29,16 +33,16 @@ public class BossTwo_Movement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		SetIdle ();
-		health = 6;
+		health = 10;
 		attackblink = 0;
 		hitblink = 0;
-
+		source = GetComponent<AudioSource>();
 		anim = GetComponent<Animator> ();
 		target = GameObject.FindWithTag("Player").transform; //target the player
 		startx = transform.position.x;
 		starty = transform.position.y;
 		summonx = (float)startx;
-		summony = (float)(starty + 1.25);
+		summony = (float)(starty + 1.5);
 	}
 	
 	// Update is called once per frame
@@ -58,7 +62,7 @@ public class BossTwo_Movement : MonoBehaviour {
 		case B2State.Summon:
 			if (timer <= 0) {
 				SetChaseStart ();
-			} else if (timer % 30 == 15 && GameManager.instance.getCageWasWelded()==false) {
+			} else if (timer % 30 == 15) {
 				//Create lion
 				//if(!lionsab){
 				Instantiate (lionPreFab, new Vector2(Random.Range(startx-1.5F, startx+1.5F), starty),
@@ -141,13 +145,11 @@ public class BossTwo_Movement : MonoBehaviour {
 			if (timer <= 0) {
 				Destroy (this);
 				Destroy (this.gameObject);
-				exit.SetActive(true);
 			}
 			break;
 		}//End update current action
 		//Update Animator States
 		if (hitblink > 0){
-			anim.SetBool("Hit_Blink", true);
 			hitblink--;
 		}else{
 			anim.SetBool("Hit_Blink", false);
@@ -158,22 +160,20 @@ public class BossTwo_Movement : MonoBehaviour {
 		anim.SetFloat ("Y_Dir", dir_y);
 
 	}
-	
-	// ***HACK? CHANGE LATER?
-	// Start
-	void ApplyDamage(int damageamount){
-		
-		if ((hitblink <= 0)) {
+
+	//Take Damage
+	void ApplyDamage(int damageamount)
+	{
+		if (hitblink <= 0) {
+			float vol = Random.Range (volLowRange, volHighRange);
+			source.PlayOneShot (hitSound, vol);
 			hitblink = 30;
-			anim.SetBool("Hit_Blink", true);
 			health -= damageamount;
 			if (health <= 0) {
 				SetDie ();
 			}
 		}
-		//Debug.Log ("Boss Health Lowered to: " + health);
 	}
-	// End
 
 	void SetIdle(){
 		timer = 40;
@@ -204,6 +204,10 @@ public class BossTwo_Movement : MonoBehaviour {
 	}
 	void SetDie(){
 		timer = 60;
+		Destroy (this);
+		Destroy (this.gameObject);
+		float vol = Random.Range (volLowRange, volHighRange);
+		source.PlayOneShot(dieSound,vol);
 		currstate = B2State.Die;
 	}
 

@@ -8,7 +8,7 @@ public class Whip_Move : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		whipsab = false;
+		whipsab = GameManager.instance.getWhipWasSabotaged();
 		flashtimer = 60;
 		//here is where you load the whipsab from the header
 	}
@@ -25,12 +25,19 @@ public class Whip_Move : MonoBehaviour {
 	//Collision Check
 	void OnCollisionEnter2D(Collision2D other)
 	{
+		int damage;
 		if (!whipsab) {
-			other.gameObject.SendMessage ("ApplyDamage", 2, SendMessageOptions.DontRequireReceiver);
+			damage = 2;
 		} else {
-			other.gameObject.SendMessage ("ApplyDamage", 1, SendMessageOptions.DontRequireReceiver);
+			damage = 1;
 		}
-		Destroy (this.gameObject);
-		Destroy (this);
+		
+		if (other.gameObject.tag == "Boss" || other.gameObject.tag == "Bucket"){
+			other.gameObject.SendMessage ("ApplyDamage", damage, SendMessageOptions.DontRequireReceiver);
+		}
+		if (other.gameObject.tag != "Player"){
+			Destroy (this.gameObject);
+			Destroy (this);
+		}
 	}
 }

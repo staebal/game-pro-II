@@ -7,6 +7,12 @@ public class BossThree_Movement : MonoBehaviour {
 
 	public GameObject knifePreFab;
 	public GameObject sardinePreFab;
+	public AudioClip hitSound;
+	public AudioClip dieSound;
+	private AudioSource source;
+	private float volLowRange = .5f;
+	private float volHighRange = 1.0f;
+
 	bool sardinesab;
 	bool tieshoesab;
 	float startx;
@@ -24,7 +30,7 @@ public class BossThree_Movement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//rbody = GetComponent<Rigidbody2D> ();
+		source = GetComponent<AudioSource>();
 		anim = GetComponent<Animator> ();
 		anim.SetBool("Under_Half", false);
 		anim.SetBool("Hit_Blink", false);
@@ -178,6 +184,8 @@ public class BossThree_Movement : MonoBehaviour {
 	{
 		if ((hitblink <= 0) && ((currstate == B3State.Idle) || (currstate == B3State.Stun)))
 		{
+			float vol = Random.Range (volLowRange, volHighRange);
+			source.PlayOneShot(hitSound,vol);
 			hitblink = 30;
 			anim.SetBool("Hit_Blink", true);
 			health -= damageamount;
@@ -217,6 +225,8 @@ public class BossThree_Movement : MonoBehaviour {
 	}
 	void SetDie(){
 		timer = 30;
+		float vol = Random.Range (volLowRange, volHighRange);
+		source.PlayOneShot(dieSound,vol);
 		currstate = B3State.Die;
 	}
 }

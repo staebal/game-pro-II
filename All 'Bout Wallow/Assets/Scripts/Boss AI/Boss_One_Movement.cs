@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BossOne_Movement : MonoBehaviour {
+public class Boss_One_Movement : MonoBehaviour {
 
 	enum B1State { Idle, Align, Attack, Tired, Stun, Rage, Die };
 
@@ -10,6 +10,12 @@ public class BossOne_Movement : MonoBehaviour {
 
 	public GameObject downfirePreFab;
 	public GameObject flashfirePreFab;
+	public AudioClip hitSound;
+	public AudioClip dieSound;
+	private AudioSource source;
+	private float volLowRange = .5f;
+	private float volHighRange = 1.0f;
+	//public bool sabget;
 
 	//Rigidbody2D rbody;
 	Animator anim;
@@ -24,23 +30,29 @@ public class BossOne_Movement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
+		source = GetComponent<AudioSource>();
 		anim.SetBool("Hit_Blink", false);
 		target = GameObject.FindWithTag("Player").transform; //target the player
 		startx = transform.position.x;
 		starty = transform.position.y;
 
 		SetRage ();
-		health = 100;
+		health = 8;
+		/*
+		if(sabget){
+		health = health - 2;
+		}
+		*/
 		hitblink = 0;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		//Reduce Timer for current action
 		timer--;
 		//Update current action
 		switch (currstate) {
-			//Idle
+		//Idle
 		case B1State.Idle:
 			if (timer <= 0) {
 				SetAlign();
@@ -119,7 +131,7 @@ public class BossOne_Movement : MonoBehaviour {
 		float i = (float)currstate;
 		anim.SetFloat ("State_Flag", i);
 	}
-		
+
 	void ApplyDamage(int damageamount){
 
 		if (currstate == B1State.Align || currstate == B1State.Attack
@@ -128,10 +140,14 @@ public class BossOne_Movement : MonoBehaviour {
 		}
 		if ((hitblink <= 0) && (currstate == B1State.Stun)) {
 			hitblink = 30;
+			float vol = Random.Range (volLowRange, volHighRange);
 			anim.SetBool("Hit_Blink", true);
 			health -= damageamount;
 			if (health <= 0) {
+				source.PlayOneShot (dieSound, vol);
 				SetDie ();
+			} else {
+				source.PlayOneShot (hitSound, vol);
 			}
 		}
 	}

@@ -45,10 +45,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BootsRigged.cs" />
+     <Compile Include="Assets\BucketRigged.cs" />
+     <Compile Include="Assets\FireRodTaken.cs" />
      <Compile Include="Assets\LionDamaged.cs" />
-     <Compile Include="Assets\Scripts\Boss AI\BossOne_Movement.cs" />
      <Compile Include="Assets\Scripts\Boss AI\BossThree_Movement.cs" />
      <Compile Include="Assets\Scripts\Boss AI\BossTwo_Movement.cs" />
+     <Compile Include="Assets\Scripts\Boss AI\Boss_One_Movement.cs" />
      <Compile Include="Assets\Scripts\Dialoginator.cs" />
      <Compile Include="Assets\Scripts\Interaction and Management\CSVReader.cs" />
      <Compile Include="Assets\Scripts\Interaction and Management\ExitScene.cs" />
@@ -65,6 +68,7 @@
      <Compile Include="Assets\Scripts\Weaponry\LionMove_Script.cs" />
      <Compile Include="Assets\Scripts\Weaponry\Sardine_Move.cs" />
      <Compile Include="Assets\Scripts\Weaponry\SwipeDuration.cs" />
+     <Compile Include="Assets\Scripts\Weaponry\TamerWhip_Move.cs" />
      <Compile Include="Assets\Scripts\Weaponry\ThowSword_Move.cs" />
      <Compile Include="Assets\Scripts\Weaponry\Whip_Move.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs" />
@@ -72,6 +76,7 @@
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledInitialShaderProperties.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
+     <Compile Include="Assets\WhipRigged.cs" />
      <None Include="Assets\Tiled2Unity\Imported\Firebreather Room.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\Shaders\shaDefault.shader" />
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />

@@ -33,6 +33,8 @@ public class PlayerAttack : MonoBehaviour {
 	private int currentTime;
 	private bool hitblink;
 	private int health;
+	private bool useWhip=true;
+	private bool useFire=true;
 	
 	// local variables to declare
 	enum WallowState {IdleMove, Swipe, AbilityFire, AbilityWhip, Hurt, Death, Victory};
@@ -47,6 +49,12 @@ public class PlayerAttack : MonoBehaviour {
 		currentTime = 0;
 		hitblink = false;
 		health = 6;
+		if(GameManager.instance){
+			if (GameManager.instance.getWallowAteCake()==true)
+				health=3;
+			useWhip = GameManager.instance.walllowGotWhip;
+			useFire = GameManager.instance.walllowGotFire && !GameManager.instance.getRodWasStolen();
+		}
 		//swipeTransform = swipe.GetComponent<Transform> ();
 	}
 	
@@ -69,11 +77,11 @@ public class PlayerAttack : MonoBehaviour {
 				currstate = WallowState.Swipe;
 				currentTime = swingTime;
 			}
-			else if(Input.GetButtonDown ("Fire")) {
+			else if(Input.GetButtonDown ("Fire") && useFire) {
 				currstate = WallowState.AbilityFire;
 				currentTime = swingTime;
 			}
-			else if(Input.GetButtonDown ("Whip")) {
+			else if(Input.GetButtonDown ("Whip") && useWhip) {
 				currstate = WallowState.AbilityWhip;
 				currentTime = swingTime;
 			}
