@@ -113,8 +113,7 @@ public class GameManager : MonoBehaviour{
 			MenuMusic.SetActive (false);
 			break;
 		case "Title Menu":
-		case "Pause Menu":
-		case "Game Over":
+		case "Controls":
 			FireBreatherMusic.SetActive (false);
 			CommonQuartersMusic.SetActive (false);
 			CarnivalGroundsMusic.SetActive (false);

@@ -1,8 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Wallow\PlayerAttack.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Dialoginator.cs">
     <Files>
-      <File FileName="Assets\Scripts\Wallow\PlayerAttack.cs" Line="170" Column="39" />
+      <File FileName="Assets\DancingCube.cs" Line="11" Column="5" />
+      <File FileName="Assets\Scripts\Wallow\PlayerAttack.cs" Line="73" Column="27" />
+      <File FileName="Assets\CreditsSwap.cs" Line="14" Column="4" />
+      <File FileName="Assets\Scripts\Interaction and Management\I_Title.cs" Line="48" Column="3" />
+      <File FileName="Assets\Scripts\Interaction and Management\GameManager.cs" Line="116" Column="19" />
+      <File FileName="Assets\Scripts\Dialoginator.cs" Line="92" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
