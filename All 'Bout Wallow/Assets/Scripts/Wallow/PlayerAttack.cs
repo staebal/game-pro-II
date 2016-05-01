@@ -7,9 +7,9 @@
 // http://docs.unity3d.com/ScriptReference/Transform.Rotate.html
 // http://docs.unity3d.com/ScriptReference/Vector3.html
 // http://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html
-// http://answers.unity3d.com/questions/14637/get-the-currently-open-scene-name-or-file-name.html
 
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
@@ -20,6 +20,12 @@ public class PlayerAttack : MonoBehaviour {
 	public GameObject swipe;
 	public GameObject fireball;
 	public GameObject whip;
+	public AudioClip hitSound;
+	public AudioClip dieSound;
+	public Text healthtext;
+	private AudioSource source;
+	private float volLowRange = .5f;
+	private float volHighRange = 1.0f;
 
 	// spawn locations
 	public Transform weaponNorth;
@@ -32,12 +38,11 @@ public class PlayerAttack : MonoBehaviour {
 	// private variables 
 	private int currentTime;
 	private bool hitblink;
-	private int health;
-	private bool useWhip=true;
-	private bool useFire=true;
+	public int health=6;
+	
 	
 	// local variables to declare
-	enum WallowState {IdleMove, Swipe, AbilityFire, AbilityWhip, Hurt, Death, Victory};
+	enum WallowState {IdleMove, Swipe, AbilityFire, AbilityWhip, Hurt, Death, Victory, Move};
 	WallowState currstate;
 	Animator animator;
 	Transform swipeTransform;
@@ -45,16 +50,18 @@ public class PlayerAttack : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
+		source = GetComponent<AudioSource>();
 		currstate = WallowState.IdleMove;
 		currentTime = 0;
 		hitblink = false;
-		health = 6;
+		healthtext.text = "Health: " + health.ToString ();
 		if(GameManager.instance){
 			if (GameManager.instance.getWallowAteCake()==true)
 				health=3;
 			useWhip = GameManager.instance.walllowGotWhip;
 			useFire = GameManager.instance.walllowGotFire && !GameManager.instance.getRodWasStolen();
 		}
+		//health = 15;
 		//swipeTransform = swipe.GetComponent<Transform> ();
 	}
 	
@@ -76,7 +83,6 @@ public class PlayerAttack : MonoBehaviour {
 			if (Input.GetButtonDown ("Sword")) {
 				currstate = WallowState.Swipe;
 				currentTime = swingTime;
-			}
 			else if(Input.GetButtonDown ("Fire") && useFire) {
 				currstate = WallowState.AbilityFire;
 				currentTime = swingTime;
@@ -114,26 +120,25 @@ public class PlayerAttack : MonoBehaviour {
 		case WallowState.AbilityFire:
 			if (currentTime==(swingTime-2)){
 				// activate collision trigger dependent on current input axis
-				// messed up rotation values are result of assumption that all weapon sprites are drawn facing east (right)
 				// moving left
 				if (xface < 0){
-					Debug.Log ("shoot left!");
-					Instantiate(fireball, weaponWest.position, weaponSouth.rotation);
+					//Debug.Log ("swipe left!");
+					Instantiate(fireball, weaponWest.position, weaponWest.rotation);
 				}
 				// moving right
 				else if (xface > 0){
-					Debug.Log ("shoot right!");
-					Instantiate(fireball, weaponEast.position, weaponNorth.rotation);
+					//Debug.Log ("swipe right!");
+					Instantiate(fireball, weaponEast.position, weaponEast.rotation);
 				}
 				// moving up
 				else if (yface > 0){
-					Debug.Log ("shoot up!");
-					Instantiate(fireball, weaponNorth.position, weaponWest.rotation);
+					//Debug.Log ("swipe up!");
+					Instantiate(fireball, weaponNorth.position, weaponNorth.rotation);
 				}
 				// moving down OR idle
 				else{
-					Debug.Log ("shoot down!");
-					Instantiate(fireball, weaponSouth.position, weaponEast.rotation);
+					//Debug.Log ("swipe down!");
+					Instantiate(fireball, weaponSouth.position, weaponSouth.rotation);
 				}
 			}
 			break;
@@ -166,8 +171,8 @@ public class PlayerAttack : MonoBehaviour {
 			break;
 		case WallowState.Death:
 			if (currentTime <= 0) {
-				Destroy (this);
-				Destroy (this.gameObject);
+				
+				//Destroy (this.gameObject);
 				Scene scene = SceneManager.GetActiveScene();
 				//scene.name; yields name of scene
 				// go back to pre rigging scene
@@ -191,7 +196,6 @@ public class PlayerAttack : MonoBehaviour {
 		}
 
 	}
-
 	//Take Damage
 	void ApplyDamage(int damageamount)
 	{
@@ -200,13 +204,16 @@ public class PlayerAttack : MonoBehaviour {
 			hitblink = true;
 			currentTime = 30;
 			health -= damageamount;
+			healthtext.text = "Health: " + health.ToString ();
+			float vol = Random.Range (volLowRange, volHighRange);
 			if (health <= 0){
+				source.PlayOneShot(dieSound,vol);
 				currstate = WallowState.Death;
 			}else{
+				source.PlayOneShot(hitSound,vol);
 				currstate = WallowState.Hurt;
 			}
 		}
-		//Debug.Log ("Wallow Health Lowered to: " + health);
 	}
 
 	void StartDancing()

@@ -25,19 +25,12 @@ public class Whip_Move : MonoBehaviour {
 	//Collision Check
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		int damage;
 		if (!whipsab) {
-			damage = 2;
+			other.gameObject.SendMessage ("ApplyDamage", 2, SendMessageOptions.DontRequireReceiver);
 		} else {
-			damage = 1;
+			other.gameObject.SendMessage ("ApplyDamage", 1, SendMessageOptions.DontRequireReceiver);
 		}
-		
-		if (other.gameObject.tag == "Boss" || other.gameObject.tag == "Bucket"){
-			other.gameObject.SendMessage ("ApplyDamage", damage, SendMessageOptions.DontRequireReceiver);
-		}
-		if (other.gameObject.tag != "Player"){
-			Destroy (this.gameObject);
-			Destroy (this);
-		}
+		Destroy (this.gameObject);
+		Destroy (this);
 	}
 }

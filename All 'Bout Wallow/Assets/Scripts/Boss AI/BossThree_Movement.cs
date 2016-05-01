@@ -12,7 +12,6 @@ public class BossThree_Movement : MonoBehaviour {
 	private AudioSource source;
 	private float volLowRange = .5f;
 	private float volHighRange = 1.0f;
-
 	bool sardinesab;
 	bool tieshoesab;
 	float startx;
@@ -30,7 +29,7 @@ public class BossThree_Movement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		source = GetComponent<AudioSource>();
+		//rbody = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 		anim.SetBool("Under_Half", false);
 		anim.SetBool("Hit_Blink", false);
@@ -45,8 +44,8 @@ public class BossThree_Movement : MonoBehaviour {
 
 		//Sabotages
 		//Replace these with the get function
-		sardinesab = true;
-		tieshoesab = false;
+		sardinesab = GameManager.instance.getKnivesWereReplaced();
+		tieshoesab = GameManager.instance.getBootsWereSabotaged();
 	}
 	
 	// Update is called once per frame
@@ -75,32 +74,35 @@ public class BossThree_Movement : MonoBehaviour {
 				SetIdle ();
 			} else if ((timer % 30) == 3) {
 				GameObject Clone;
-
-				/*if(sardinesab){
-				if (target.transform.position.x < transform.position.x) {
-					Clone = (Instantiate (sardinePreFab, (transform.position - transform.up
-					- transform.right), transform.rotation)) as GameObject;
-				} else {
-					Clone = (Instantiate (sardinePreFab, (transform.position - transform.up
-						+ transform.right), transform.rotation)) as GameObject;
+				// check for sardine sabotage rig BEGIN
+				if(sardinesab){
+					if (target.transform.position.x < transform.position.x) {
+						Clone = (Instantiate (sardinePreFab, (transform.position - transform.up
+					- 		transform.right), transform.rotation)) as GameObject;
+					} else {
+						Clone = (Instantiate (sardinePreFab, (transform.position - transform.up
+							+ transform.right), transform.rotation)) as GameObject;
+					}
 				}
-				}*/
-				//else{
-				if (target.transform.position.x < transform.position.x) {
-					Clone = (Instantiate (knifePreFab, (transform.position - transform.up
-						- transform.right), transform.rotation)) as GameObject;
-				} else {
-					Clone = (Instantiate (knifePreFab, (transform.position - transform.up
-						+ transform.right), transform.rotation)) as GameObject;
+				//END
+				else{
+					if (target.transform.position.x < transform.position.x) {
+						Clone = (Instantiate (knifePreFab, (transform.position - transform.up
+							- transform.right), transform.rotation)) as GameObject;
+					} else {
+						Clone = (Instantiate (knifePreFab, (transform.position - transform.up
+							+ transform.right), transform.rotation)) as GameObject;
+					}
 				}
-				//}
 
 			}
 			break;
 			//Spin
 		case B3State.Spin:
-			if (timer <= 0) {
+			// check for boot sabotage rig BEGIN
+			if (timer <= 0 || tieshoesab) {
 				SetStun ();
+			// END
 			} else if (timer % 4 == 0) {
 				//Chase Wallow
 				if (target.transform.position.x < transform.position.x) {
@@ -131,8 +133,6 @@ public class BossThree_Movement : MonoBehaviour {
 		case B3State.Charge:
 			if (timer <= 0) {
 				SetStun ();
-			}else if(tieshoesab){
-				SetStun();
 			} else {
 				transform.position -= transform.up * 12 * Time.deltaTime;
 			}

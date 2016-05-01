@@ -12,7 +12,8 @@ public class BossTwo_Movement : MonoBehaviour {
 	private AudioSource source;
 	private float volLowRange = .5f;
 	private float volHighRange = 1.0f;
-	//public lionsab;
+	public GameObject exit;
+	private lionsab;
 	float startx;
 	float starty;
 	float summonx;
@@ -36,13 +37,14 @@ public class BossTwo_Movement : MonoBehaviour {
 		health = 10;
 		attackblink = 0;
 		hitblink = 0;
-		source = GetComponent<AudioSource>();
+		lionsab = GameManager.instance.getCageWasWelded();
+
 		anim = GetComponent<Animator> ();
 		target = GameObject.FindWithTag("Player").transform; //target the player
 		startx = transform.position.x;
 		starty = transform.position.y;
 		summonx = (float)startx;
-		summony = (float)(starty + 1.5);
+		summony = (float)(starty + 1.25);
 	}
 	
 	// Update is called once per frame
@@ -62,12 +64,14 @@ public class BossTwo_Movement : MonoBehaviour {
 		case B2State.Summon:
 			if (timer <= 0) {
 				SetChaseStart ();
-			} else if (timer % 30 == 15) {
+			} else if (timer % 30 == 15 && GameManager.instance.getCageWasWelded()==false) {
 				//Create lion
-				//if(!lionsab){
+				// check for lion cage welding sabotage BEGIN
+				if(!lionsab){
 				Instantiate (lionPreFab, new Vector2(Random.Range(startx-1.5F, startx+1.5F), starty),
 					transform.rotation);
-				//}
+				}
+				// END
 			}
 			break;
 		//Chase
@@ -145,11 +149,13 @@ public class BossTwo_Movement : MonoBehaviour {
 			if (timer <= 0) {
 				Destroy (this);
 				Destroy (this.gameObject);
+				exit.SetActive(true);
 			}
 			break;
 		}//End update current action
 		//Update Animator States
 		if (hitblink > 0){
+			anim.SetBool("Hit_Blink", true);
 			hitblink--;
 		}else{
 			anim.SetBool("Hit_Blink", false);
@@ -160,20 +166,24 @@ public class BossTwo_Movement : MonoBehaviour {
 		anim.SetFloat ("Y_Dir", dir_y);
 
 	}
-
-	//Take Damage
-	void ApplyDamage(int damageamount)
-	{
-		if (hitblink <= 0) {
+	
+	// ***HACK? CHANGE LATER?
+	// Start
+	void ApplyDamage(int damageamount){
+		
+		if ((hitblink <= 0)) {
 			float vol = Random.Range (volLowRange, volHighRange);
 			source.PlayOneShot (hitSound, vol);
 			hitblink = 30;
+			anim.SetBool("Hit_Blink", true);
 			health -= damageamount;
 			if (health <= 0) {
 				SetDie ();
 			}
 		}
+		//Debug.Log ("Boss Health Lowered to: " + health);
 	}
+	// End
 
 	void SetIdle(){
 		timer = 40;
