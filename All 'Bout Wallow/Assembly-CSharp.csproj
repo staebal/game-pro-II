@@ -59,6 +59,8 @@
      <Compile Include="Assets\Scripts\Interaction and Management\Loader.cs" />
      <Compile Include="Assets\Scripts\Wallow\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\Wallow\PlayerMover.cs" />
+     <Compile Include="Assets\Scripts\WallowFireBall_Move.cs" />
+     <Compile Include="Assets\Scripts\WallowWhip_Move.cs" />
      <Compile Include="Assets\Scripts\Weaponry\DownFire_Movement.cs" />
      <Compile Include="Assets\Scripts\Weaponry\FireBall_Move.cs" />
      <Compile Include="Assets\Scripts\Weaponry\FireWall_Move.cs" />

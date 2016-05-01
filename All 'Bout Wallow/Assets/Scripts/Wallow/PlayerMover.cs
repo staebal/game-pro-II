@@ -21,15 +21,19 @@ public class PlayerMover : MonoBehaviour {
 			animator.SetBool("IsMoving", true);
 			animator.SetFloat("InputX", movementVector.x);
 			animator.SetFloat("InputY", movementVector.y);
+			animator.SetInteger ("CurrentState", 7);
 		}
 		else {										// if not moving
 			animator.SetBool("IsMoving", false);
+			animator.SetFloat("InputX", movementVector.x);
+			animator.SetFloat("InputY", movementVector.y);
+			animator.SetInteger ("CurrentState", 0);
 		}
 		
 		// Prehaps ugrade to utilize FixedUpdate()?
-		if(animator.GetInteger("CurrentState") == 0){
+		//if(animator.GetInteger("CurrentState") == 0){
 			rBody.MovePosition(rBody.position + movementVector * speed * Time.deltaTime);
-		}
+		//}
 		
 	}
 	

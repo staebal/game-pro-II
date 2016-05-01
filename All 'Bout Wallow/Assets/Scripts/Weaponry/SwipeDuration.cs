@@ -6,30 +6,21 @@ using System.Collections;
 public class SwipeDuration : MonoBehaviour {
 
 	// the starting time of swipe creation
-	private int swipeTimer;
+	public float swipeTimer=0.45f;
 	
 	// Use this for initialization
 	void Start () {
-		swipeTimer = 5;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		swipeTimer--;
-		// check current swipe time
-		if(swipeTimer<=0){	
-			// destroy object instance after x time of being alive
-			Destroy(gameObject);
-		}
+		Destroy(gameObject,swipeTimer);
 	}
 
 	//Collision Check
-	void OnCollisionEnter2D(Collision2D other)
+	void OnCollisionStay2D(Collision2D other)
 	{
-		Debug.Log ("Wallow inflicted sword damage!");
 		if (other.gameObject.tag == "Boss") {
-			other.gameObject.SendMessage("ApplyDamage", 1);
+			other.gameObject.SendMessage ("ApplyDamage", 1);
+		} else {
+			other.gameObject.SendMessage ("SwipeDamage", 1);
 		}
-
+		Destroy(gameObject);
 	}
 }
