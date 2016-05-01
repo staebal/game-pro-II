@@ -10,6 +10,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerAttack : MonoBehaviour {
 
@@ -35,7 +36,7 @@ public class PlayerAttack : MonoBehaviour {
 	// private variables 
 	private int currentTime;
 	private bool hitblink;
-	private int health;
+	public int health=15;
 	
 	// local variables to declare
 	enum WallowState {IdleMove, Swipe, AbilityFire, AbilityWhip, Hurt, Death, Victory, Move};
@@ -50,7 +51,7 @@ public class PlayerAttack : MonoBehaviour {
 		currstate = WallowState.IdleMove;
 		currentTime = 0;
 		hitblink = false;
-		health = 15;
+		//health = 15;
 		//swipeTransform = swipe.GetComponent<Transform> ();
 	}
 	
@@ -158,13 +159,32 @@ public class PlayerAttack : MonoBehaviour {
 		case WallowState.Hurt:
 			break;
 		case WallowState.Death:
+			if (currentTime <= 0) {
+				
+				//Destroy (this.gameObject);
+				Scene scene = SceneManager.GetActiveScene();
+				//scene.name; yields name of scene
+				// go back to pre rigging scene
+				// reset rigs
+				if(scene.name == "2.1 Getting Burned"){
+					GameManager.instance.rigReset(1);
+					GameManager.instance.ChangeToScene("1.2 Cake and Insults");
+				}
+				else if(scene.name == "3.1 Now Watch Me Whip"){
+					GameManager.instance.rigReset(2);
+					GameManager.instance.ChangeToScene("2.3 Wallow's Room");
+				}
+				else if(scene.name == "4.1 Bragging and the Final Bout"){
+					GameManager.instance.rigReset(3);
+					GameManager.instance.ChangeToScene("3.1.3 Wallow's Room");
+				}
+			}
 			break;
 		case WallowState.Victory:
 			break;
 		}
 
 	}
-
 	//Take Damage
 	void ApplyDamage(int damageamount)
 	{

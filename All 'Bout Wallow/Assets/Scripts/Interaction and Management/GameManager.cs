@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour{
 		switch (SceneName) {
 		//carnival grounds music
 		case "1.4 Liontamer Setup":
-		case "2.2 Vengeance and a Nap":
+		case "2.2 Vengence and a Nap":
 		case "2.5 Lion Cages Rigging":
 		case "3.3 Liontamer's Lament":
 			FireBreatherMusic.SetActive (false);
@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour{
 			CarnivalGroundsMusic.SetActive (false);
 			LionTamerMusic.SetActive (false);
 			SwordSwallowerMusic.SetActive (false);
-			CreditsMusic.SetActive (false);
+			CreditsMusic.SetActive (true);
 			MenuMusic.SetActive (false);
 			break;
 			//common areas music

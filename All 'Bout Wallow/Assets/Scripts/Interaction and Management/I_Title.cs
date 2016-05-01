@@ -9,8 +9,7 @@ public class I_Title : MonoBehaviour {
 	void Update () {
 		// if player presses "Enter" button, go to Intro
 		if (Input.GetButtonDown("Submit")){
-			Debug.Log ("Starting New Game!");
-			GameManager.instance.ChangeToScene("1.1 Intro");
+			StartGame ();
 		}
 		// if player presses "c" button go to Credits
 		else if (Input.GetKeyDown("c")){
@@ -19,9 +18,19 @@ public class I_Title : MonoBehaviour {
 		}
 		// if player presses "Esc" button end application
 		else if (Input.GetButtonDown("Cancel")){
-			Debug.Log ("Quitting App!");
-			Application.Quit();
+			ExitGame ();
 		}
 		// else do nothing
+	}
+
+	public void ExitGame()
+	{
+		Debug.Log ("Quitting App!");
+		Application.Quit();
+	}
+
+	public void StartGame(){
+		Debug.Log ("Starting New Game!");
+		GameManager.instance.ChangeToScene("1.1 Intro");
 	}
 }
