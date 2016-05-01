@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/4.1 Bragging and the Final Bout.unity
+- path: C:/_Alex/GitHub/game-pro-II/Animation Experiments/Assets/BossTestScene.unity
   isLoaded: 1
   isActive: 1
