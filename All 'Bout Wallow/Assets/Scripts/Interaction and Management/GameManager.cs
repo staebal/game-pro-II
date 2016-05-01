@@ -7,7 +7,13 @@ using UnityEngine.SceneManagement;
     
 public class GameManager : MonoBehaviour{
 	public static GameManager instance = null;              // Static instance of GameManager which allows it to be accessed by any other script.
-	
+	public GameObject CommonQuartersMusic =null;
+	public GameObject CarnivalGroundsMusic=null;
+	public GameObject FireBreatherMusic=null;
+	public GameObject LionTamerMusic=null;
+	public GameObject SwordSwallowerMusic=null;
+	public GameObject CreditsMusic=null;
+	public GameObject MenuMusic=null;
 	//private int currentSceneIndexInt;
 	
 	private bool wallowAteCake				= false;
@@ -19,6 +25,7 @@ public class GameManager : MonoBehaviour{
 	private bool knivesWereReplaced			= false;
 	private bool wallowLostPreMatch			= false;
 	private bool swordSwallowerLostPreMatch	= false;
+	private string lastScene;
 	
 	
 	//enum SceneLocale {Title, Intro, PreB1, B1, PostB1, PreB2, B2, PostB2, PreB3, B3, Victory, Credits, Dead, Pause};
@@ -36,6 +43,8 @@ public class GameManager : MonoBehaviour{
 		
 		// Sets this to not be destroyed when reloading scene
 		DontDestroyOnLoad(gameObject);
+		lastScene = SceneManager.GetActiveScene ().name;
+
 	}
 	
 	// creates target game scene
@@ -43,8 +52,99 @@ public class GameManager : MonoBehaviour{
 		// call function from scene manager to set up next scene
 		//SwitchScene(targetSceneString);
 		SceneManager.LoadScene(targetSceneString, LoadSceneMode.Single);
+		ChangeSceneMusic(targetSceneString);
 	} 
-	
+
+	public void ChangeSceneMusic(string SceneName)
+	{
+		print (SceneName);
+		switch (SceneName) {
+		//carnival grounds music
+		case "1.4 Liontamer Setup":
+		case "2.2 Vengeance and a Nap":
+		case "2.5 Lion Cages Rigging":
+		case "3.3 Liontamer's Lament":
+			FireBreatherMusic.SetActive (false);
+			CommonQuartersMusic.SetActive (false);
+			CarnivalGroundsMusic.SetActive (true);
+			LionTamerMusic.SetActive (false);
+			SwordSwallowerMusic.SetActive (false);
+			CreditsMusic.SetActive (false);
+			MenuMusic.SetActive (false);
+			break;
+			//Firebreather fight music
+		case "2.1 Getting Burned":
+			FireBreatherMusic.SetActive (true);
+			CommonQuartersMusic.SetActive (false);
+			CarnivalGroundsMusic.SetActive (false);
+			LionTamerMusic.SetActive (false);
+			SwordSwallowerMusic.SetActive (false);
+			CreditsMusic.SetActive (false);
+			MenuMusic.SetActive (false);
+			break;
+			//Liontamer fight music
+		case "3.1 Now Watch Me Whip":
+			FireBreatherMusic.SetActive (false);
+			CommonQuartersMusic.SetActive (false);
+			CarnivalGroundsMusic.SetActive (false);
+			LionTamerMusic.SetActive (true);
+			SwordSwallowerMusic.SetActive (false);
+			CreditsMusic.SetActive (false);
+			MenuMusic.SetActive (false);
+			break;
+			//Swordswallower fight music
+		case "4.1 Bragging and the Final Bout":
+			FireBreatherMusic.SetActive (false);
+			CommonQuartersMusic.SetActive (false);
+			CarnivalGroundsMusic.SetActive (false);
+			LionTamerMusic.SetActive (false);
+			SwordSwallowerMusic.SetActive (true);
+			CreditsMusic.SetActive (false);
+			MenuMusic.SetActive (false);
+			break;
+			//credits music
+		case "Credits and Thanks":
+			FireBreatherMusic.SetActive (false);
+			CommonQuartersMusic.SetActive (false);
+			CarnivalGroundsMusic.SetActive (false);
+			LionTamerMusic.SetActive (false);
+			SwordSwallowerMusic.SetActive (false);
+			CreditsMusic.SetActive (true);
+			MenuMusic.SetActive (false);
+			break;
+		case "Title Menu":
+		case "Pause Menu":
+		case "Game Over":
+			FireBreatherMusic.SetActive (false);
+			CommonQuartersMusic.SetActive (false);
+			CarnivalGroundsMusic.SetActive (false);
+			LionTamerMusic.SetActive (false);
+			SwordSwallowerMusic.SetActive (false);
+			CreditsMusic.SetActive (false);
+			MenuMusic.SetActive (true);
+			break;
+			//epilogue no music
+		case "Victory and Epilogue":
+			FireBreatherMusic.SetActive (false);
+			CommonQuartersMusic.SetActive (false);
+			CarnivalGroundsMusic.SetActive (false);
+			LionTamerMusic.SetActive (false);
+			SwordSwallowerMusic.SetActive (false);
+			CreditsMusic.SetActive (false);
+			MenuMusic.SetActive (false);
+			break;
+			//common areas music
+		default:
+			CommonQuartersMusic.SetActive (true);
+			CarnivalGroundsMusic.SetActive (false);
+			FireBreatherMusic.SetActive (false);
+			LionTamerMusic.SetActive (false);
+			SwordSwallowerMusic.SetActive (false);
+			CreditsMusic.SetActive (false);
+			MenuMusic.SetActive (false);
+			break;
+		}
+	}
 	//void SwitchScene(string targetSceneString){
 	//	SceneManager.LoadScene(targetSceneString, LoadSceneMode.Single);
 	//}
@@ -183,5 +283,13 @@ public class GameManager : MonoBehaviour{
 					fireBreatherAteCake	= false;
 					break;
 		}
-	}	
+	}
+
+	void Update(){
+		if (SceneManager.GetActiveScene ().name != lastScene) {
+			print ("doot!");
+			ChangeSceneMusic (SceneManager.GetActiveScene ().name);
+			lastScene = SceneManager.GetActiveScene ().name;
+		}
+	}
 }
