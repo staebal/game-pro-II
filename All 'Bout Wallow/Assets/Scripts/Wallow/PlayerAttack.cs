@@ -9,6 +9,7 @@
 // http://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html
 
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +22,7 @@ public class PlayerAttack : MonoBehaviour {
 	public GameObject whip;
 	public AudioClip hitSound;
 	public AudioClip dieSound;
+	public Text healthtext;
 	private AudioSource source;
 	private float volLowRange = .5f;
 	private float volHighRange = 1.0f;
@@ -51,6 +53,7 @@ public class PlayerAttack : MonoBehaviour {
 		currstate = WallowState.IdleMove;
 		currentTime = 0;
 		hitblink = false;
+		healthtext.text = "Health: " + health.ToString ();
 		//health = 15;
 		//swipeTransform = swipe.GetComponent<Transform> ();
 	}
@@ -193,6 +196,7 @@ public class PlayerAttack : MonoBehaviour {
 			hitblink = true;
 			currentTime = 30;
 			health -= damageamount;
+			healthtext.text = "Health: " + health.ToString ();
 			float vol = Random.Range (volLowRange, volHighRange);
 			if (health <= 0){
 				source.PlayOneShot(dieSound,vol);
