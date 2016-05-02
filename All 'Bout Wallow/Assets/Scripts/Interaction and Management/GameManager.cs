@@ -68,6 +68,15 @@ public class GameManager : MonoBehaviour{
 			walllowGotWhip = true;
 		}
 
+		if (targetSceneString == "Victory and Epilogue") {
+			walllowGotFire = false;
+			walllowGotWhip = false;
+			wallowAteCake = false;
+			rigReset (1);
+			rigReset (2);
+			rigReset (3);
+		}
+
 		SceneManager.LoadScene(targetSceneString);
 		/*print("W ate cake: "+wallowAteCake);
 		print("FB ate cake: "+fireBreatherAteCake);
