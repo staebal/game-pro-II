@@ -17,7 +17,7 @@ public class ExitScene : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(exitScene);
+            GameManager.instance.ChangeToScene(exitScene);
         }
     }
 }

@@ -12,6 +12,7 @@ public class BossThree_Movement : MonoBehaviour {
 	private AudioSource source;
 	private float volLowRange = .5f;
 	private float volHighRange = 1.0f;
+	public GameObject exit;
 	bool sardinesab;
 	bool tieshoesab;
 	float startx;
@@ -149,6 +150,7 @@ public class BossThree_Movement : MonoBehaviour {
 		case B3State.Die:
 			if (timer <= 0){
 				Destroy (this.gameObject);
+				exit.SetActive(true);
 			}
 			break;
 		}//End State Update

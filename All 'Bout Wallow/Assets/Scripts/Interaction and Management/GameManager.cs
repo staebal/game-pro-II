@@ -58,7 +58,6 @@ public class GameManager : MonoBehaviour{
 			wallowAteCake = false;
 		}
 		SceneManager.LoadScene(targetSceneString, LoadSceneMode.Single);
-		ChangeSceneMusic(targetSceneString);
 		print("W ate cake: "+wallowAteCake);
 		print("FB ate cake: "+fireBreatherAteCake);
 		print("Whip is weak: "+whipWasSabotaged);
@@ -68,6 +67,7 @@ public class GameManager : MonoBehaviour{
 		print("knives are sardines: "+knivesWereReplaced);
 		print("wallow got flames: "+walllowGotFire);
 		print("wallow got whips: "+walllowGotWhip);
+		ChangeSceneMusic(targetSceneString);
 	} 
 
 	public void ChangeSceneMusic(string SceneName)

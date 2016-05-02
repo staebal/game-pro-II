@@ -15,6 +15,7 @@ public class BossOne_Movement : MonoBehaviour {
 	private AudioSource source;
 	private float volLowRange = .5f;
 	private float volHighRange = 1.0f;
+	public GameObject exit;
 	//public bool sabget;
 
 	//Rigidbody2D rbody;
@@ -118,6 +119,7 @@ public class BossOne_Movement : MonoBehaviour {
 		case B1State.Die:
 			if (timer <= 0){
 				Destroy (this.gameObject);
+				exit.SetActive(true);
 			}
 			break;
 		}//End State Update
