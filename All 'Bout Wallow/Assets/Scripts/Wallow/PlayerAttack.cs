@@ -39,6 +39,8 @@ public class PlayerAttack : MonoBehaviour {
 	private int currentTime;
 	private bool hitblink;
 	public int health=6;
+	private bool useWhip;
+	private bool useFire;
 	
 	
 	// local variables to declare
@@ -83,6 +85,7 @@ public class PlayerAttack : MonoBehaviour {
 			if (Input.GetButtonDown ("Sword")) {
 				currstate = WallowState.Swipe;
 				currentTime = swingTime;
+			}
 			else if(Input.GetButtonDown ("Fire") && useFire) {
 				currstate = WallowState.AbilityFire;
 				currentTime = swingTime;

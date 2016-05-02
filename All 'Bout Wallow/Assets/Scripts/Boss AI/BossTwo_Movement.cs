@@ -13,7 +13,7 @@ public class BossTwo_Movement : MonoBehaviour {
 	private float volLowRange = .5f;
 	private float volHighRange = 1.0f;
 	public GameObject exit;
-	private lionsab;
+	private bool lionsab;
 	float startx;
 	float starty;
 	float summonx;
