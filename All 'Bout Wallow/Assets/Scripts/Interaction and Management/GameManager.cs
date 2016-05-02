@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour{
 	private bool fireBreatherAteCake		= false;
 	private bool whipWasSabotaged			= false;
 	private bool cageWasWelded				= false;
-	private bool rodWasStolen				= true;
+	private bool rodWasStolen				= false;
 	private bool bootsWereSabotaged			= false;
 	private bool knivesWereReplaced			= false;
 	private bool wallowLostPreMatch			= false;
@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour{
 		DontDestroyOnLoad(gameObject);
 		lastScene = SceneManager.GetActiveScene ().name;
 
+
 	}
 	
 	// creates target game scene
@@ -54,11 +55,16 @@ public class GameManager : MonoBehaviour{
 		// call function from scene manager to set up next scene
 		//SwitchScene(targetSceneString);
 		// ensure wallow's health returns to normal after firebreather fight
-		if (targetSceneString == "2.3 Wallow's Room"){
+		if (targetSceneString == "2.3 Wallow's Room") {
 			wallowAteCake = false;
+		} else if (targetSceneString == "3.1 Wallow's Room") {
+			rodWasStolen = true;
+		} else if (targetSceneString == "2.2 Venegence and a Nap") {
+			walllowGotFire = true;
 		}
-		SceneManager.LoadScene(targetSceneString, LoadSceneMode.Single);
-		print("W ate cake: "+wallowAteCake);
+
+		SceneManager.LoadScene(targetSceneString);
+		/*print("W ate cake: "+wallowAteCake);
 		print("FB ate cake: "+fireBreatherAteCake);
 		print("Whip is weak: "+whipWasSabotaged);
 		print("Lions are gone: "+cageWasWelded);
@@ -66,7 +72,7 @@ public class GameManager : MonoBehaviour{
 		print("boots are bad: "+bootsWereSabotaged);
 		print("knives are sardines: "+knivesWereReplaced);
 		print("wallow got flames: "+walllowGotFire);
-		print("wallow got whips: "+walllowGotWhip);
+		print("wallow got whips: "+walllowGotWhip);*/
 		ChangeSceneMusic(targetSceneString);
 	} 
 

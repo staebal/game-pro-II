@@ -56,8 +56,10 @@ public class PlayerAttack : MonoBehaviour {
 		currstate = WallowState.IdleMove;
 		currentTime = 0;
 		hitblink = false;
+		if(healthtext!=null)
 		healthtext.text = "Health: " + health.ToString ();
-		if(GameManager.instance){
+		if(GameManager.instance!=null){
+			print ("imarealboy");
 			if (GameManager.instance.getWallowAteCake()==true)
 				health=3;
 			useWhip = GameManager.instance.walllowGotWhip;
@@ -207,6 +209,7 @@ public class PlayerAttack : MonoBehaviour {
 			hitblink = true;
 			currentTime = 30;
 			health -= damageamount;
+			if(healthtext!=null)
 			healthtext.text = "Health: " + health.ToString ();
 			float vol = Random.Range (volLowRange, volHighRange);
 			if (health <= 0){

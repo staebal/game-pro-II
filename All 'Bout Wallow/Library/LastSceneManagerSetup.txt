@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/Title Menu.unity
+- path: Assets/_Scenes/2.4 Liontamer's Rigging.unity
   isLoaded: 1
   isActive: 1
