@@ -25,7 +25,7 @@ public class BossOne_Movement : MonoBehaviour {
 
 	int timer;
 	int attackno;
-	int health;
+	public int health;
 	int hitblink;
 
 	// Use this for initialization
@@ -118,7 +118,7 @@ public class BossOne_Movement : MonoBehaviour {
 			//Die
 		case B1State.Die:
 			if (timer <= 0){
-				Destroy (this.gameObject);
+				Destroy (gameObject, 3.0f);
 				exit.SetActive(true);
 			}
 			break;

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/1.4 Liontamer Setup.unity
+- path: Assets/_Scenes/2.1 Getting Burned.unity
   isLoaded: 1
   isActive: 1
