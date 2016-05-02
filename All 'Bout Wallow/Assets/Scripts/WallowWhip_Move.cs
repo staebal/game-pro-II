@@ -3,23 +3,20 @@ using System.Collections;
 
 public class WallowWhip_Move : MonoBehaviour {
 
-	int flashtimer;
+	public float flashtimer=0.1f;
 	bool whipsab;
 
 	// Use this for initialization
 	void Start () {
+		if(GameManager.instance!=null)
 		whipsab = GameManager.instance.getWhipWasSabotaged();
-		flashtimer = 60;
+		Destroy (gameObject, flashtimer);
 		//here is where you load the whipsab from the header
 	}
 
 	// Update is called once per frame
 	void Update () {
-		flashtimer--;
-		if (flashtimer <= 0) {
-			Destroy (this.gameObject);
-			Destroy (this);
-		}
+
 	}
 
 	//Collision Check
@@ -27,18 +24,18 @@ public class WallowWhip_Move : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Boss") {
 			if (!whipsab) {
-				other.gameObject.SendMessage ("ApplyDamage", 2);
+				other.gameObject.SendMessage ("ApplyDamage", 2, SendMessageOptions.DontRequireReceiver);
 			} else {
-				other.gameObject.SendMessage ("ApplyDamage", 1);
+				other.gameObject.SendMessage ("ApplyDamage", 1, SendMessageOptions.DontRequireReceiver);
 			}
 		} else {
 			if (!whipsab) {
-				other.gameObject.SendMessage ("WhipDamage", 2);
+				other.gameObject.SendMessage ("WhipDamage", 2, SendMessageOptions.DontRequireReceiver);
 			} else {
-				other.gameObject.SendMessage ("WhipDamage", 1);
+				other.gameObject.SendMessage ("WhipDamage", 1, SendMessageOptions.DontRequireReceiver);
 			}
 		}
-		Destroy (this.gameObject);
-		Destroy (this);
+	/*	if(other.gameObject.tag!="Player")
+		Destroy (gameObject);*/
 	}
 }

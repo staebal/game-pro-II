@@ -153,22 +153,22 @@ public class PlayerAttack : MonoBehaviour {
 				// moving left
 				if (xface < 0){
 					//Debug.Log ("swipe left!");
-					Instantiate(whip, weaponWest.position, weaponWest.rotation);
+					Instantiate(whip, weaponWest.position, Quaternion.Euler(0,0,90));
 				}
 				// moving right
 				else if (xface > 0){
 					//Debug.Log ("swipe right!");
-					Instantiate(whip, weaponEast.position, weaponEast.rotation);
+					Instantiate(whip, weaponEast.position, Quaternion.Euler(0,0,270));
 				}
 				// moving up
 				else if (yface > 0){
 					//Debug.Log ("swipe up!");
-					Instantiate(whip, weaponNorth.position, weaponNorth.rotation);
+					Instantiate(whip, weaponNorth.position+ new Vector3(0,0.32f), Quaternion.Euler(0,0,0));
 				}
 				// moving down OR idle
 				else{
 					//Debug.Log ("swipe down!");
-					Instantiate(whip, weaponSouth.position, weaponSouth.rotation);
+					Instantiate(whip, weaponSouth.position+ new Vector3(0,-0.32f), Quaternion.Euler(180,0,0));
 				}
 			}
 			break;

@@ -45,6 +45,7 @@ public class BossTwo_Movement : MonoBehaviour {
 		starty = transform.position.y;
 		summonx = (float)startx;
 		summony = (float)(starty + 1.25);
+		source=gameObject.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -147,9 +148,8 @@ public class BossTwo_Movement : MonoBehaviour {
 		//Die
 		case B2State.Die:
 			if (timer <= 0) {
-				Destroy (this);
-				Destroy (this.gameObject);
 				exit.SetActive(true);
+				Destroy (gameObject);
 			}
 			break;
 		}//End update current action
@@ -214,8 +214,6 @@ public class BossTwo_Movement : MonoBehaviour {
 	}
 	void SetDie(){
 		timer = 60;
-		Destroy (this);
-		Destroy (this.gameObject);
 		float vol = Random.Range (volLowRange, volHighRange);
 		source.PlayOneShot(dieSound,vol);
 		currstate = B2State.Die;

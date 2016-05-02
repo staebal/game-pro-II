@@ -57,10 +57,15 @@ public class GameManager : MonoBehaviour{
 		// ensure wallow's health returns to normal after firebreather fight
 		if (targetSceneString == "2.3 Wallow's Room") {
 			wallowAteCake = false;
-		} else if (targetSceneString == "3.1 Wallow's Room") {
+		}
+		if (targetSceneString == "3.1.3 Wallow's Room") {
 			rodWasStolen = true;
-		} else if (targetSceneString == "2.2 Venegence and a Nap") {
+		} 
+		if (targetSceneString == "2.2 Venegence and a Nap") {
 			walllowGotFire = true;
+		}
+		if (targetSceneString == "3.1.1 Carnival Grounds") {
+			walllowGotWhip = true;
 		}
 
 		SceneManager.LoadScene(targetSceneString);
@@ -134,8 +139,7 @@ public class GameManager : MonoBehaviour{
 			MenuMusic.SetActive (false);
 			break;
 		case "Title Menu":
-		case "Pause Menu":
-		case "Game Over":
+		case "Controls":
 			FireBreatherMusic.SetActive (false);
 			CommonQuartersMusic.SetActive (false);
 			CarnivalGroundsMusic.SetActive (false);
@@ -239,5 +243,8 @@ public class GameManager : MonoBehaviour{
 		//	ChangeSceneMusic (SceneManager.GetActiveScene ().name);
 		//	lastScene = SceneManager.GetActiveScene ().name;
 		//}
+		if (Input.GetButtonDown("Cancel")){
+			Application.Quit ();
+		}
 	}
 }

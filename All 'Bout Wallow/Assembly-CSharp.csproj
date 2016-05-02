@@ -49,7 +49,9 @@
      <Compile Include="Assets\BucketRigged.cs" />
      <Compile Include="Assets\CreditsSwap.cs" />
      <Compile Include="Assets\DancingCube.cs" />
+     <Compile Include="Assets\ExitBox.cs" />
      <Compile Include="Assets\FireRodTaken.cs" />
+     <Compile Include="Assets\FirewandRetrieve.cs" />
      <Compile Include="Assets\LionDamaged.cs" />
      <Compile Include="Assets\Scripts\Boss AI\BossOne_Movement.cs" />
      <Compile Include="Assets\Scripts\Boss AI\BossThree_Movement.cs" />

@@ -13,11 +13,11 @@ public class LionDamaged : MonoBehaviour {
 	void Update () {
 	
 	}
-    void ApplyDamage(int damageamount)
+    void Weld(int damageamount)
     {
-        if(GameManager.instance)
+        if(GameManager.instance!=null)
 			GameManager.instance.setCageWasWelded(true);
-        this.gameObject.SetActive(false);
         swapCage.SetActive(true);
+		this.gameObject.SetActive(false);
     }
 }

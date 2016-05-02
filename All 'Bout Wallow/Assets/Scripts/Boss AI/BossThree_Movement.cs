@@ -47,6 +47,7 @@ public class BossThree_Movement : MonoBehaviour {
 		//Replace these with the get function
 		sardinesab = GameManager.instance.getKnivesWereReplaced();
 		tieshoesab = GameManager.instance.getBootsWereSabotaged();
+		source = gameObject.GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame

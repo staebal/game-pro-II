@@ -16,10 +16,12 @@ public class SwipeDuration : MonoBehaviour {
 	//Collision Check
 	void OnTriggerStay2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "Boss" || other.gameObject.tag == "WhipRest" || other.gameObject.tag == "Boots") {
+		if (other.gameObject.tag == "Boss") {
 			other.gameObject.SendMessage ("ApplyDamage", 1, SendMessageOptions.DontRequireReceiver);
 		} else {
-			other.gameObject.SendMessage ("SwipeDamage", 1, SendMessageOptions.DontRequireReceiver);
+			print ("sending message they wont forget.");
+			print(other);
+			other.gameObject.SendMessage ("Noodles", 1, SendMessageOptions.DontRequireReceiver);
 		}
 		if(other.gameObject.tag!="Player")
 		Destroy(gameObject);

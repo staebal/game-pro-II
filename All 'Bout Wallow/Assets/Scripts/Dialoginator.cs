@@ -84,12 +84,12 @@ public class Dialoginator : MonoBehaviour {
                     break;
             }
         }
-        if(enddialog && Input.GetKeyDown(KeyCode.Return))
+        if(enddialog && Input.GetButtonDown("DialogAdvance"))
         {
             currentline++;
         }
        
-        if (!enddialog&&textbox != null&&Input.GetKeyDown(KeyCode.Return))
+			if (!enddialog&&textbox != null&&Input.GetButtonDown("DialogAdvance"))
         {
             textbox.SetActive(false);
         }
