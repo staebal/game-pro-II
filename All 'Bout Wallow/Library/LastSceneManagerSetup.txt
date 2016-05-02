@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/3.2 Swordswallower Rigging.unity
+- path: Assets/_Scenes/1.4 Liontamer Setup.unity
   isLoaded: 1
   isActive: 1

@@ -29,6 +29,7 @@ public class WallowWhip_Move : MonoBehaviour {
 				other.gameObject.SendMessage ("ApplyDamage", 1, SendMessageOptions.DontRequireReceiver);
 			}
 		} else {
+			print (other);
 			if (!whipsab) {
 				other.gameObject.SendMessage ("WhipDamage", 2, SendMessageOptions.DontRequireReceiver);
 			} else {

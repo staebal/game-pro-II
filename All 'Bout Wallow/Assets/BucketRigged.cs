@@ -13,7 +13,7 @@ public class BucketRigged : MonoBehaviour {
 	void Update () {
 	
 	}
-    void ApplyDamage(int damageamount)
+    void WhipDamage(int damageamount)
     {
         if(GameManager.instance)
 			GameManager.instance.setKnivesWereReplaced(true);

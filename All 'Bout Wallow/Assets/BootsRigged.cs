@@ -5,19 +5,13 @@ public class BootsRigged : MonoBehaviour {
 
 	// Use this for initialization
     public GameObject swapBoots;
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-    void ApplyDamage(int damageamount)
+
+	void WhipDamage(int damageamount)
     {
-        if(GameManager.instance)
+		print ("we did it yah!");
+        if(GameManager.instance!=null)
 			GameManager.instance.setBootsWereSabotaged(true);
+		swapBoots.SetActive(true);
         this.gameObject.SetActive(false);
-        swapBoots.SetActive(true);
     }
 }
