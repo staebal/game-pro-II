@@ -47,6 +47,8 @@
   <ItemGroup>
      <Compile Include="Assets\BootsRigged.cs" />
      <Compile Include="Assets\BucketRigged.cs" />
+     <Compile Include="Assets\CreditsSwap.cs" />
+     <Compile Include="Assets\DancingCube.cs" />
      <Compile Include="Assets\FireRodTaken.cs" />
      <Compile Include="Assets\LionDamaged.cs" />
      <Compile Include="Assets\Scripts\Boss AI\BossOne_Movement.cs" />

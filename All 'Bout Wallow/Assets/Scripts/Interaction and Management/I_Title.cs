@@ -13,8 +13,7 @@ public class I_Title : MonoBehaviour {
 		}
 		// if player presses "c" button go to Credits
 		else if (Input.GetKeyDown("c")){
-			Debug.Log ("Going to Credits!");
-			GameManager.instance.ChangeToScene("Credits and Thanks");
+			Credits ();
 		}
 		// if player presses "Esc" button end application
 		else if (Input.GetButtonDown("Cancel")){
@@ -32,5 +31,19 @@ public class I_Title : MonoBehaviour {
 	public void StartGame(){
 		Debug.Log ("Starting New Game!");
 		GameManager.instance.ChangeToScene("1.1 Intro");
+	}
+	public void TitleMenu(){
+		Debug.Log ("Returning to the Title");
+		GameManager.instance.ChangeToScene("Title Menu");
+	}
+
+	public void Credits(){
+		Debug.Log ("Going to Credits!");
+		GameManager.instance.ChangeToScene("Credits and Thanks");
+	}
+
+	public void Controls(){
+		Debug.Log ("Going to Controls!");
+		GameManager.instance.ChangeToScene("Controls");
 	}
 }
